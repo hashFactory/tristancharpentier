@@ -1,129 +1,158 @@
 <html>
-    <head>
-        
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <script type='text/javascript' src='scripts/picobel.legacy.min.js'></script>
-        <link rel='stylesheet' href='style/player.pitchfork.css' type='text/css'/>
-    </head>
-    <body style = "margin:0; background-color: #f1f1f1">
-        <header style="background-color: #ffffff">
-            <h1><a class="title" href="#">Welcome to tristancharpentier.com</a></h1>
-        </header>
-        <section style="background-color: #330033">
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type='text/javascript' src='scripts/picobel.legacy.min.js'></script>
+    <link rel='stylesheet' href='style/player.pitchfork.css' type='text/css' />
+</head>
+
+<body style="margin:0; background-color: #f1f1f1">
+    <header style="background-color: #ffffff">
+        <h1><a class="title" href="#">Welcome to tristancharpentier.com</a></h1>
+    </header>
+    <section style="background-color: #330033">
         <footer>
-        <script>
-            let picobel_instance = Picobel( { theme: 'pitchfork' } );
-            console.log(picobel_instance.state);
-        </script>
+            <script>
+                let picobel_instance = Picobel({ theme: 'pitchfork' });
+                console.log(picobel_instance.state);
+            </script>
         </footer>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="25" height="25" viewBox="0 -5 24 24" stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
-                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                    </svg>Home</a></li>
-                    <li class="selected"><a href="music.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-music" width="24" height="24" viewBox="0 -5 24 24" stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z"/>
+        <nav>
+            <ul>
+                <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-home" width="25" height="25" viewBox="0 -5 24 24"
+                            stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                        </svg>Home</a></li>
+                <li class="selected"><a href="music.html"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-music" width="24" height="24" viewBox="0 -5 24 24"
+                            stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
                             <circle cx="6" cy="17" r="3" />
                             <circle cx="16" cy="17" r="3" />
                             <polyline points="9 17 9 4 19 4 19 17" />
                             <line x1="9" y1="8" x2="19" y2="8" />
-                    </svg>Music</a></li>
-                    <li><a href="appreciation.html"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-left" width="24" height="24" viewBox="0 -5 24 24" stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <line x1="4" y1="6" x2="20" y2="6" />
-                        <line x1="4" y1="12" x2="14" y2="12" />
-                        <line x1="4" y1="18" x2="18" y2="18" />
-                    </svg>Appreciation Blog</a></li>
-                    <li><a href="https://github.com/hashFactory"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="24" height="24" viewBox="0 -5 24 24" stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <polyline points="7 8 3 12 7 16" />
-                        <polyline points="17 8 21 12 17 16" />
-                        <line x1="14" y1="4" x2="10" y2="20" />
-                    </svg>Projects</a></li>
-                    <li><a href="http://lw839.usbx.me:8888"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-database" width="24" height="24" viewBox="0 -2 24 24" stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <ellipse cx="12" cy="6" rx="8" ry="3"></ellipse>
-                        <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
-                        <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+                        </svg>Music</a></li>
+                <li><a href="appreciation.html"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-align-left" width="24" height="24" viewBox="0 -5 24 24"
+                            stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="4" y1="6" x2="20" y2="6" />
+                            <line x1="4" y1="12" x2="14" y2="12" />
+                            <line x1="4" y1="18" x2="18" y2="18" />
+                        </svg>Appreciation Blog</a></li>
+                <li><a href="https://github.com/hashFactory"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-code" width="24" height="24" viewBox="0 -5 24 24"
+                            stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <polyline points="7 8 3 12 7 16" />
+                            <polyline points="17 8 21 12 17 16" />
+                            <line x1="14" y1="4" x2="10" y2="20" />
+                        </svg>Projects</a></li>
+                <li><a href="http://lw839.usbx.me:8888"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-database" width="24" height="24" viewBox="0 -2 24 24"
+                            stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <ellipse cx="12" cy="6" rx="8" ry="3"></ellipse>
+                            <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+                            <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
                         </svg>File Server</a></li>
-                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-text" width="24" height="24" viewBox="0 -5 24 24" stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                        <line x1="9" y1="9" x2="10" y2="9" />
-                        <line x1="9" y1="13" x2="15" y2="13" />
-                        <line x1="9" y1="17" x2="15" y2="17" />
-                    </svg>About me</a></li>
-                    <li><a href="mailto:contact@tristancharpentier.com"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 -5 24 24" stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z"/>
-                        <rect x="3" y="5" width="18" height="14" rx="2" />
-                        <polyline points="3 7 12 13 21 7" />
-                    </svg><span>Contact me</span></a></li>
-                </ul>
-                
-            </nav>
-            
-            <article>
-                <h2 style="text-align:center">Music</h2>
-                <div class="fill">
-                    <img src="assets/transition_v2.png" alt="">
-                    <div class="mix">
-                        <div class="mix-title">
-                            <h3>Transition v2 Mix</h3>
-                            <p style="margin-left: 15px; background-color: #dddcdd">2020-07-27<b style="margin-left: 15px">22:36</b></p>
-                            <audio controls src="media/transition_v2.mp3"></audio>
-                        </div>
-                    </div>
-                </div>
-                <div class="fill">
-                    <img src="assets/transition.png" alt="">
-                    <div class="mix">
-                        <div class="mix-title">
-                            <h3>Transition Mix</h3>
-                            <p style="margin-left: 15px; background-color: #dddcdd">2020-07-26<b style="margin-left: 15px">15:34</b></p>
-                            <audio controls src="media/transition.mp3"></audio>
-                        </div>
-                    </div>
-                </div>
-                <div class="fill">
-                    <a href="https://soundcloud.com/veritablepantoufle/nozima-mix">
-                        <img src="assets/nozima.png" alt="">
-                    </a>
+                <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-text"
+                            width="24" height="24" viewBox="0 -5 24 24" stroke-width="2" stroke="#330033" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                            <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                            <line x1="9" y1="9" x2="10" y2="9" />
+                            <line x1="9" y1="13" x2="15" y2="13" />
+                            <line x1="9" y1="17" x2="15" y2="17" />
+                        </svg>About me</a></li>
+                <li><a href="mailto:contact@tristancharpentier.com"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 -5 24 24"
+                            stroke-width="2" stroke="#330033" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <polyline points="3 7 12 13 21 7" />
+                        </svg><span>Contact me</span></a></li>
+            </ul>
+
+        </nav>
+
+        <article>
+            <h2 style="text-align:center">Music</h2>
+            <div class="fill">
+                <img src="assets/transition_v2.png" alt="">
                 <div class="mix">
                     <div class="mix-title">
-                        <a href="https://soundcloud.com/veritablepantoufle/nozima-mix" style="text-decoration: none; color: black;">
+                        <h3>Transition v2 Mix</h3>
+                        <p style="margin-left: 15px; background-color: #dddcdd">2020-07-27<b
+                                style="margin-left: 15px">22:36</b></p>
+                        <audio controls src="media/transition_v2.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="fill">
+                <img src="assets/transition.png" alt="">
+                <div class="mix">
+                    <div class="mix-title">
+                        <h3>Transition Mix</h3>
+                        <p style="margin-left: 15px; background-color: #dddcdd">2020-07-26<b
+                                style="margin-left: 15px">15:34</b></p>
+                        <audio controls src="media/transition.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="fill">
+                <a href="https://soundcloud.com/veritablepantoufle/nozima-mix">
+                    <img src="assets/nozima.png" alt="">
+                </a>
+                <div class="mix">
+                    <div class="mix-title">
+                        <a href="https://soundcloud.com/veritablepantoufle/nozima-mix"
+                            style="text-decoration: none; color: black;">
                             <h3>Nozima Mix</h3>
                         </a>
-                        <p style="margin-left: 15px; background-color: #dddcdd">2020-07-17<b style="margin-left: 15px">55:08</b></p>
+                        <p style="margin-left: 15px; background-color: #dddcdd">2020-07-17<b
+                                style="margin-left: 15px">55:08</b></p>
                         <audio controls src="media/nozima.mp3"></audio>
                     </div>
                 </div>
-                </div>
-                <div class="fill">
-                    <a href="https://soundcloud.com/veritablepantoufle/chill-mix-mixdown" style="text-decoration: none; color: black;">
-                        <img src="assets/chill.png" alt="">
-                    </a>
-                    <div class="mix">
-                        <div class="mix-title">
-                            <a href="https://soundcloud.com/veritablepantoufle/chill-mix-mixdown" style="text-decoration: none; color: black;">
-                                <h3>Chill Mix</h3>
-                            </a>
-                            <p style="margin-left: 15px; background-color: #dddcdd">2020-07-09<b style="margin-left: 15px">35:07</b></p>
-                            <audio controls src="media/chill.mp3"></audio>
-                        </div>
+            </div>
+            <div class="fill">
+                <a href="https://soundcloud.com/veritablepantoufle/chill-mix-mixdown"
+                    style="text-decoration: none; color: black;">
+                    <img src="assets/chill.png" alt="">
+                </a>
+                <div class="mix">
+                    <div class="mix-title">
+                        <a href="https://soundcloud.com/veritablepantoufle/chill-mix-mixdown"
+                            style="text-decoration: none; color: black;">
+                            <h3>Chill Mix</h3>
+                        </a>
+                        <p style="margin-left: 15px; background-color: #dddcdd">2020-07-09<b
+                                style="margin-left: 15px">35:07</b></p>
+                        <audio controls src="media/chill.mp3"></audio>
                     </div>
                 </div>
-            </article>
-        </section>
-        
-        
-        <footer>
-            
-        </footer>
+            </div>
+        </article>
+    </section>
 
-    </body>
-    
+
+    <footer>
+
+    </footer>
+
+</body>
+
 </html>

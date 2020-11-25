@@ -6,12 +6,11 @@ html, body {
     height: 100%;
     -webkit-flex: 1;
     -ms-flex: 1;
-
     display: flex;
     flex-direction: column;
 }
 
-body > * {
+body>* {
     flex-shrink: 0;
 }
 
@@ -43,7 +42,6 @@ body > * {
 p {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
-
 
 audio {
     display: flex;
@@ -84,8 +82,7 @@ nav {
     flex-grow: 1;
 }
 
-.mix-title h3,
-.mix-title p {
+.mix-title h3, .mix-title p {
     display: inline;
     vertical-align: top;
     line-height: 28px;
@@ -119,9 +116,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a span {
-
-}
+nav ul li a span {}
 
 .selected {
     background-color: darkgray;
@@ -133,15 +128,12 @@ nav ul li img {
 }
 
 @media (max-width: 600px) {
-  section {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-      flex-grow: 1;
-      
-  }
+    section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        flex-grow: 1;
+    }
 }
-
-
 
 a {
     text-decoration: none;
