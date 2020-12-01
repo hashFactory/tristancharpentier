@@ -8,9 +8,12 @@ My main github repo for my personal website. You can find it right [here](https:
   - [x] compiles templates into final pages
   - [X] basic argument parsing
   - [ ] add options for specifying source and destination directory
+  - [ ] add export functionality to create the ready webpage
+    - [ ] need to add directories to `site.map` to specify what to move to output folder
   - [ ] more robust directives for page specifiction (specific js, css, etc...)
   - [ ] beautify output html for indentation & more
   - [ ] add `selected` class to correct `<li>` of nav
+  - [ ] pull heavy media from lw839 file server
 
 * Website
   - [ ] mobile responsiveness
