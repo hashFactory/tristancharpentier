@@ -1,16 +1,11 @@
 
 /* whole page */
-html, body {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    height: 100%;
-}
-
 * {
     box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
 }
 
 .title {
@@ -19,24 +14,17 @@ html, body {
     text-decoration: none;
 }
 
-body>* {
-    flex-shrink: 0;
-}
-
-p {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
 
 /* header */
 header {
     text-align: center;
     border-bottom: 1px solid black;
+    background-color: white;
 }
 
 /* all content pages */
 .content-title {
-    text-align:center
+    text-align:center;
 }
 
 /* music & playlist pages */
@@ -115,22 +103,21 @@ section {
 
 /* nav */
 nav {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    float: left;
+    width: 20%;
     background: #ccc;
     padding: 0px;
-    flex-grow: 1;
 }
 
 nav ul {
     list-style-type: none;
+    padding-top: 0;
     padding: 0;
+    padding-bottom: 0;
 }
 
 nav ul li {
-    padding-left: 5px;
-    vertical-align: middle;
+    display: block;
     min-height: 35px;
     border-bottom: 1px solid black;
 }
@@ -139,11 +126,14 @@ nav ul li a {
     font-family: "Arial";
     color: #330033;
     text-decoration: none;
+    padding-left: 5px;
 }
 
-nav ul li img {
-    width: 100%;
-    height: 100%;
+nav ul li a p {
+    font-family: "Arial";
+    color: #330033;
+    text-decoration: none;
+    text-align: center;
 }
 
 .last-li {
@@ -156,20 +146,31 @@ nav ul li img {
 
 /* article (main content) */
 article {
-    -webkit-flex: 4;
-    -ms-flex: 4;
-    flex: 4;
+    float: left;
+    width: 80%;
     border-left: 2px solid #000;
     background-color: #f1f1f1;
     padding: 10px;
     bottom: 100%;
 }
 
+section {
+    overflow: auto;
+}
+
 /* make it reactive */
-@media (max-width: 620px) {
+@media only screen and (max-width: 620px) {
     section {
         -webkit-flex-direction: column;
         flex-direction: column;
         flex-grow: 1;
+    }
+
+    nav, article {
+        width: 100%;
+    }
+
+    nav ul li {
+        text-align: center;
     }
 }
