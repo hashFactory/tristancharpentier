@@ -19,6 +19,7 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] segment css into separate files
   - [ ] create pretty spotify playlists page
   - [ ] add personal links to bottom of home page
+  - [ ] (plz one day) dark mode
   
 ### Preprocessor
 ```
