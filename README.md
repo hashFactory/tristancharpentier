@@ -1,6 +1,6 @@
 # tristancharpentier.com
 
-My main github repo for my personal website. You can find it right [here](tristancharpentier.com).
+My main github repo for my personal website. You can find it right [here](https://tristancharpentier.com).
 
 ### TODO:
 
