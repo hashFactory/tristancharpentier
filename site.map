@@ -1,4 +1,45 @@
-<|TITLE|> title title.html
-<|NAV|> nav nav.html
-<|HEADER|> header header.html
-<|ARTICLE|> article article.html
+{
+    "macros_file": "macros.map",
+    "content_dir": "content/",
+    "template_dir": "templates/",
+    "output_dir": "../final/",
+    "pages": [
+        {
+            "name": "index",
+            "type": "content",
+            "filename": "index.html",
+            "title": "Tristan's Homepage"
+        },
+        {
+            "name": "about",
+            "type": "content",
+            "filename": "about.html",
+            "title": "About me"
+        },
+        {
+            "name": "appreciation",
+            "type": "content",
+            "filename": "appreciation.html",
+            "title": "Appreciation Blog"
+        },
+        {
+            "name": "music",
+            "type": "content",
+            "filename": "music.html",
+            "title": "Tristan's Music"
+        },
+        {
+            "name": "playlists",
+            "type": "content",
+            "filename": "playlists.html",
+            "title": "YT Music Playlists"
+        }
+    ],
+    "include": [
+        "robots.txt",
+        "main.css",
+        "favicon.ico",
+        "media/",
+        "assets/"
+    ]
+}

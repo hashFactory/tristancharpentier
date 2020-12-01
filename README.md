@@ -7,9 +7,9 @@ My main github repo for my personal website. You can find it right [here](https:
 * Preprocessor (preprocessor.py)
   - [x] compiles templates into final pages
   - [X] basic argument parsing
-  - [ ] add options for specifying source and destination directory
-  - [ ] add export functionality to create the ready webpage
-    - [ ] need to add directories to `site.map` to specify what to move to output folder
+  - [X] add options for specifying source and destination directory
+  - [X] add export functionality to create the ready webpage
+    - [X] need to add directories to `site.map` to specify what to move to output folder
   - [ ] more robust directives for page specifiction (specific js, css, etc...)
   - [ ] beautify output html for indentation & more
   - [ ] add `selected` class to correct `<li>` of nav
@@ -26,17 +26,22 @@ My main github repo for my personal website. You can find it right [here](https:
   
 ### Preprocessor
 ```
-usage: preprocess.py [-h] [-v] COMMAND ...
+usage: preprocess.py [-h] [-v] [-o OUTPUT] [-m MAP] COMMAND ...
 
 Precompiler for tristancharpentier.com
 
 optional arguments:
-  -h, --help     show this help message and exit
-  -v, --verbose  print changes
+  -h, --help            show this help message and exit
+  -v, --verbose         print changes
+  -o OUTPUT, --output OUTPUT
+                        set the output directory for export
+  -m MAP, --map MAP     specify .map generator
 
 possible commands:
   COMMAND
-    clean        deletes compiled files
-    dryrun       compiles without writing files
-    compile      compiles project
+    clean               deletes compiled files
+    dryrun              compiles without writing files
+    compile             compiles in current dir project
+    export              compiles & exports according to site.map
+
 ```
