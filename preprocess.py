@@ -58,9 +58,10 @@ def generate_pages(future, macros):
         template = get_page("")
         with open(content_dir + fu.filename, 'r') as content:
             with open(fu.filename, 'w') as future_page:
-                for m in range(0, 3):
+                for m in range(1, 3):
                     template = template.replace(macros[m].name, open("templates/" + macros[m].filename, 'r').read())
                 template = template.replace("<|ARTICLE|>", content.read())
+                template = template.replace("<|TITLE|>", fu.title)
                 if not DRYRUN:
                     future_page.write(template)
                 if V:
