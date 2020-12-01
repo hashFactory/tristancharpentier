@@ -4,6 +4,15 @@ import os
 import json
 import sys
 import argparse
+import getopt
+
+# TODO
+# TEMPORARY (replace once I have proper options for content locations)
+content_dir = "content/"
+
+# verbosity flag
+V = False
+DRYRUN = False
 
 # defines all the metadata a page needs
 class FuturePage():
@@ -43,18 +52,19 @@ def get_page(template):
         page_template.close()
         return contents
 
-# generates 
+# generates the new pages
 def generate_pages(future, macros):
     for fu in future:
         template = get_page("")
         with open(content_dir + fu.filename, 'r') as content:
             with open(fu.filename, 'w') as future_page:
                 for m in range(0, 3):
-                    print(macros[m].name)
                     template = template.replace(macros[m].name, open("templates/" + macros[m].filename, 'r').read())
                 template = template.replace("<|ARTICLE|>", content.read())
-                future_page.write(template)
-                print(template)
+                if not DRYRUN:
+                    future_page.write(template)
+                if V:
+                    print(template)
                 future_page.close()
             content.close()
 
@@ -103,26 +113,57 @@ def read_site_map(filename):
             macros.append(Macro(line[0], line[1], line[2]))
     return macros
 
-# handles main functions
-def main(args):
+# cleans compiled files
+def clean(map_file, pages_file):
+    macros = read_site_map(map_file)
+    future = read_pages_map(pages_file, macros)
+    for fu in future:
+        if V:
+            print("Not removing " + fu.filename)
+        if os.path.exists(fu.filename):
+            if V:
+                print("Removing " + fu.filename)
+            os.remove(fu.filename)
+
+# main compiling function
+def compile(map_file, pages_file):
     macros = read_site_map(map_file)
     future = read_pages_map(pages_file, macros)
     generate_pages(future, macros)
 
-# main entry
-# just parses and sends everything to main
-if __name__ == '__main__':
+# handles main functions
+def main(args):
+    # set defaults
     map_file = "site.map"
     pages_file = "pages.map"
     content_dir = "content/"
 
+    # main argument loop
+    if args.verbose:
+        V = True
+    if args.command == 'clean':
+        clean(map_file, pages_file)
+    elif args.command == 'compile':
+        compile(map_file, pages_file)
+    elif args.command == 'dryrun':
+        DRYRUN = True
+        compile(map_file, pages_file)
+    
+
+# main entry
+# just parses and sends everything to main
+if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Precompiler for tristancharpentier.com")
 
-    parser.add_argument("clean", help="deletes compiled files", action="store_true")
-    parser.add_argument("dryrun", help="compiles without writing files", action="store_true")
-    parser.add_argument("compile", help="compiles project", action="store_true")
-    parser.add_argument("-v", "--verbose", help="print changes", action="store_true")
-    
-    args = parser.parse_args()
+    # add flag arguments here
+    parser.add_argument("-v", "--verbose", help="print changes", action="store_true")    
 
+    # add keyword commands to commands parser
+    commands = parser.add_subparsers(title='possible commands', dest='command', metavar='COMMAND')
+    commands.add_parser("clean", help="deletes compiled files")
+    commands.add_parser("dryrun", help="compiles without writing files")
+    commands.add_parser("compile", help="compiles project")
+    
+    # send all to main
+    args = parser.parse_args()
     main(args)
