@@ -1,3 +1,5 @@
+
+/* whole page */
 * {
     box-sizing: border-box;
 }
@@ -15,6 +17,19 @@ body>* {
     flex-shrink: 0;
 }
 
+
+/* header */
+header {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+/* all content pages */
+.content-title {
+    text-align:center
+}
+
+/* music page */
 .mix {
     display: flex;
     justify-content: left;
@@ -25,14 +40,27 @@ body>* {
     border-bottom: 1px dashed darkgray;
 }
 
-.fill {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    overflow: hidden
+.mix-title h3, .mix-title p {
+    display: inline;
+    vertical-align: top;
+    line-height: 28px;
 }
 
-.fill img {
+.mix-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.mix b {
+    margin-left: 15px
+}
+
+.mix p {
+    margin-left: 15px;
+    background-color: #dddcdd;
+}
+
+.mix img {
     flex-shrink: 0;
     padding-top: 10px;
     margin-right: 20px;
@@ -64,11 +92,6 @@ article {
     bottom: 0;
 }
 
-header {
-    text-align: center;
-    border-bottom: 1px solid black;
-}
-
 img {
     max-width: 100%;
     max-height: 100%;
@@ -81,12 +104,6 @@ nav {
     background: #ccc;
     padding: 0px;
     flex-grow: 1;
-}
-
-.mix-title h3, .mix-title p {
-    display: inline;
-    vertical-align: top;
-    line-height: 28px;
 }
 
 .title {
@@ -128,7 +145,7 @@ nav ul li img {
     height: 24px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 740px) {
     section {
         -webkit-flex-direction: column;
         flex-direction: column;
