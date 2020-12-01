@@ -179,6 +179,11 @@ section {
     nav ul li {
         text-align: center;
     }
+
+    nav {
+        border-left: 1px solid #f6f2f7;
+        border-right: 1px solid #f6f2f7;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -193,6 +198,7 @@ section {
     }
     article {
         border-left: 2px solid #f6f2f7;
+        border-right: 2px solid #f6f2f7;
         background-color: #222;
     }
     .mix-title {
