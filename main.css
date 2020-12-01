@@ -6,6 +6,7 @@
 
 html, body {
     margin: 0;
+    font-family: "Arial";
 }
 
 .title {
@@ -18,13 +19,14 @@ html, body {
 /* header */
 header {
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
     background-color: white;
 }
 
 /* all content pages */
 .content-title {
-    text-align:center;
+    text-align: center;
+    font-family: "Arial";
 }
 
 /* music & playlist pages */
@@ -170,7 +172,54 @@ section {
         width: 100%;
     }
 
+    article {
+        border-left: none;
+    }
+
     nav ul li {
         text-align: center;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+    }
+    .title { color: #f6f2f7 }
+    .content-title { color: #f6f2f7 }
+    header {
+        border-bottom: 2px solid #f6f2f7;
+        background-color: black;
+    }
+    article {
+        border-left: 2px solid #f6f2f7;
+        background-color: #222;
+    }
+    .mix-title {
+        color: #f6f2f7;
+    }
+    .mix-title h3 {
+        color: #f6f2f7;
+    }
+    .mix-title p {
+        background-color: #111;
+    }
+    nav {
+        background-color: #38313b;
+    }
+    nav ul li {
+        border-bottom: 1px solid #f6f2f7;
+    }
+    nav ul li a {
+        color: #f6f2f7;
+    }
+    nav ul li svg {
+        stroke: #f6f2f7;
+    }
+    p {
+        color: white;
+    }
+    .playlist-page-header {
+        color: white;
     }
 }
