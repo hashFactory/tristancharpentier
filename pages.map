@@ -1,0 +1,34 @@
+{
+    "pages": [
+        {
+            "name": "index",
+            "type": "content",
+            "filename": "index.html",
+            "title": "Tristan Charpentier"
+        },
+        {
+            "name": "about",
+            "type": "content",
+            "filename": "about.html",
+            "title": "About me"
+        },
+        {
+            "name": "appreciation",
+            "type": "content",
+            "filename": "appreciation.html",
+            "title": "Appreciation Blog"
+        },
+        {
+            "name": "music",
+            "type": "content",
+            "filename": "music.html",
+            "title": "Tristan's Music"
+        },
+        {
+            "name": "playlists",
+            "type": "content",
+            "filename": "playlists.html",
+            "title": "My Playlists"
+        }
+    ]
+}
