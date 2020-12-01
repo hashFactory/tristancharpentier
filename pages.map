@@ -4,7 +4,7 @@
             "name": "index",
             "type": "content",
             "filename": "index.html",
-            "title": "Tristan Charpentier"
+            "title": "Tristan's Homepage'"
         },
         {
             "name": "about",
@@ -28,7 +28,7 @@
             "name": "playlists",
             "type": "content",
             "filename": "playlists.html",
-            "title": "My Playlists"
+            "title": "YT Music Playlists"
         }
     ]
 }
