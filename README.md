@@ -1,6 +1,8 @@
 # tristancharpentier.com
 
-TODO:
+My main github repo for my personal website. You can find it right [here](tristancharpentier.com).
+
+### TODO:
 
 * Preprocessor (preprocessor.py)
   - [x] compiles templates into final pages
@@ -13,8 +15,12 @@ TODO:
 * Website
   - [ ] mobile responsiveness
   - [ ] get rid of all hardcoded style from html
+  - [ ] completely reorganize main.css
+  - [ ] segment css into separate files
+  - [ ] create pretty spotify playlists page
+  - [ ] add personal links to bottom of home page
   
-## Preprocessor
+### Preprocessor
 ```
 usage: preprocess.py [-h] [-v] COMMAND ...
 
