@@ -1,4 +1,4 @@
-# tristancharpentier
+# tristancharpentier.com
 
 TODO:
 
