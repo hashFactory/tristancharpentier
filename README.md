@@ -10,6 +10,7 @@ My main github repo for my personal website. You can find it right [here](https:
   - [X] add options for specifying source and destination directory
   - [X] add export functionality to create the ready webpage
     - [X] need to add directories to `site.map` to specify what to move to output folder
+    - [ ] optimize images during export
   - [ ] more robust directives for page specifiction (specific js, css, etc...)
   - [ ] beautify output html for indentation & more
   - [ ] add `selected` class to correct `<li>` of nav
