@@ -5,15 +5,18 @@ if [ $# -eq 0 ]
 then
     # try to find repo
     REPO=$(find ~ -type d -name "tristancharpentier")
+    SCRIPT="$REPO/preprocess.py"
 
     # if couldn't find compile script inform user
-    if [ ! -f "$REPO/preprocess.py" ] then
+    if [ ! -f $SCRIPT ]
+    then
         echo "Could not find preprocess.py in repo"
-        echo "Guessed location: $REPO/preprocess.py"
-    done
+        echo "Guessed location: $SCRIPT"
+    fi
 
     # compile website
-    $REPO/preprocess.py compile
+    echo $SCRIPT compile
+    $SCRIPT compile
 fi
 
 # fetch original and browser window ID
