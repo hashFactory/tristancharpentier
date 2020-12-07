@@ -15,6 +15,8 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] beautify output html for indentation & more
   - [ ] add `selected` class to correct `<li>` of nav
   - [ ] pull heavy media from lw839 file server
+  - [ ] add image onClick to make it bigger
+  - [ ] create content generators for music and playlists
 
 * Website
   - [X] mobile responsiveness
