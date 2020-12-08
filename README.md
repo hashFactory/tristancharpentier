@@ -15,8 +15,15 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] beautify output html for indentation & more
   - [ ] add `selected` class to correct `<li>` of nav
   - [ ] pull heavy media from lw839 file server
-  - [ ] add image onClick to make it bigger
   - [ ] create content generators for music and playlists
+  - [X] create publish command that's given an scp command and exports website to destination
+  - [ ] clean up preprocessor (split into files, classes, etc...)
+  - [ ] eventually have a proper settings class
+  - [ ] add error handling
+  - [ ] color output
+  - [ ] only make `export` rmdir if compilation was successful
+  - [ ] add `print` command that outputs all the settings it understands
+  - [ ] create documentation for all .map files
 
 * Website
   - [X] mobile responsiveness
@@ -27,6 +34,7 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] add personal links to bottom of home page
   - [X] (plz one day) dark mode
   - [ ] make website reach bottom of the page
+  - [ ] add image onClick to make it bigger
 
 ### Preprocessor
 ```
