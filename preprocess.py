@@ -220,11 +220,17 @@ if __name__ == '__main__':
     commands.add_parser("dryrun", help="compiles without writing files")
     commands.add_parser("compile", help="compiles in current dir project")
     commands.add_parser("export", help="compiles & exports according to site.map")
+    commands.add_parser("publish", help="compiles & publishes (via scp) according to \"publish_scp\" option")
 
     # add flag arguments here
     parser.add_argument("-v", "--verbose", help="print changes", action="store_true")
     parser.add_argument("-o", "--output", help="set the output directory for export", action="store", dest='output')
     parser.add_argument("-m", "--map", help="specify .map generator", action="store", dest='map')
+
+    # print help if no commands specified
+    if len(sys.argv) == 1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
 
     # send all to main
     args = parser.parse_args()
