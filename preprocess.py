@@ -5,6 +5,7 @@ import json
 import sys
 import argparse
 import shutil
+import subprocess
 
 # TODO
 # TEMPORARY (replace once I have proper options for content locations)
@@ -35,18 +36,13 @@ class FuturePage():
 
 # defines what macros are available to a page
 class Macro():
-    def __init__(self):
-        self.name = "NO_NAME"
-        self.tag = "NO_TAG"
-        self.filename = "NO_FILE"
-
     def __init__(self, name, tag, filename):
         self.name = name
         self.tag = tag
         self.filename = filename
-    
+
     def __str__(self):
-        return self.name + " " + self.tag + " " + self.file
+        return self.name + " " + self.tag + " " + self.filename
 
 # fetch the default template page
 def get_page(template):
@@ -84,6 +80,8 @@ def read_site_map(filename):
     # read in settings (there's got to be a better way of doing this)
     if pages.get('macros_file'):
         settings['macros_file'] = pages.get('macros_file')
+    if pages.get('publish_file'):
+        settings['publish_file'] = pages.get('publish_file')
     if pages.get('content_dir'):
         settings['content_dir'] = pages.get('content_dir')
     if pages.get('template_dir'):
@@ -94,7 +92,7 @@ def read_site_map(filename):
     # get what must be included
     if pages.get('include'):
         settings['include'] = pages.get('include')
-    
+
     future = []
 
     # read in json into smarter objects
@@ -113,7 +111,7 @@ def read_site_map(filename):
         if V:
             print(fu)
         future.append(fu)
-    
+
     # fill the blanks
     for fu in future:
         if fu.title == "":
@@ -136,6 +134,58 @@ def read_macros_map(filename):
             line = c.split(" ")
             macros.append(Macro(line[0], line[1], line[2]))
     return macros
+
+# builds scp command in a list so subprocess.run can use it
+def generate_scp(pub_settings):
+    global settings
+
+    scp_command = ['scp', '-r']
+
+    # read in optional settings if they're there
+    if pub_settings['-i']:
+        scp_command.append('-i')
+        scp_command.append(pub_settings['-i'])
+    if pub_settings['-P']:
+        scp_command.append('-P')
+        scp_command.append(pub_settings['-P'])
+
+    # read in source and destination
+    if pub_settings.get('src'):
+        scp_command.append(pub_settings['src'])
+    if pub_settings.get('dst'):
+        scp_command.append(pub_settings['dst'])
+
+    return scp_command
+
+# read publish.map file
+def read_publish_map(filename):
+    global settings
+
+    # start loading in our publish.map
+    pub_settings = {}
+    with open(filename, 'r') as f:
+        pub_json = json.load(f)
+
+    # read in settings one by one
+    if pub_json.get('-i'):
+        pub_settings['-i'] = pub_json.get('-i')
+    if pub_json.get('-P'):
+        pub_settings['-P'] = pub_json.get('-P')
+
+    # if src and dst don't exist, make guesses
+    if pub_json.get('src'):
+        pub_settings['src'] = pub_json.get('src')
+    else:
+        pub_settings['src'] = settings['output_dir']
+    if pub_json.get('dst'):
+        pub_settings['dst'] = pub_json.get('dst')
+    else:
+        print("ERROR: need to specify a destination")
+        sys.exit(12)
+
+    f.close()
+
+    return pub_settings
 
 # cleans compiled files
 def clean(future):
@@ -173,11 +223,40 @@ def export(future):
     global settings
     macros = read_macros_map(settings['macros_file'])
     if os.path.exists(settings['output_dir']):
-        os.rmdir(settings['output_dir'])
-    else:
-        os.mkdir(settings['output_dir'])
+        shutil.rmtree(settings['output_dir'])
+    os.mkdir(settings['output_dir'])
     generate_pages(future, macros)
     export_include()
+
+def publish(future):
+    global settings
+
+    # generate command from settings
+    pub_settings = read_publish_map(settings['publish_file'])
+    scp_command = generate_scp(pub_settings)
+    if V:
+        print(scp_command)
+
+    # compile website
+    if V:
+        print("Compiling according to " + settings['site_map'] + " ...")
+    export(future)
+    if V:
+        print("Done compiling")
+
+    # execute
+    print("Using '" + ' '.join(scp_command) + "' to publish")
+    if 'y' not in input("Is this correct? [y/n] ").lower():
+        print("ERROR: you cancelled the operation")
+        sys.exit(14)
+
+    print("Publishing to " + pub_settings['dst'] + " ...")
+    scp_run = subprocess.run(scp_command)
+    if scp_run.returncode != 0:
+        print("ERROR: scp failed with error " + str(scp_run.returncode))
+        sys.exit(13)
+    else:
+        print("Success!")
 
 # handles main functions
 def main(args):
@@ -190,6 +269,7 @@ def main(args):
         site_file = args.map
 
     future = read_site_map(site_file)
+    settings['site_map'] = site_file
 
     if args.output:
         if args.output[-1] != '/':
@@ -208,6 +288,8 @@ def main(args):
         compile(future)
     elif args.command == 'export':
         export(future)
+    elif args.command == 'publish':
+        publish(future)
 
 # main entry
 # just parses and sends everything to main
@@ -220,12 +302,12 @@ if __name__ == '__main__':
     commands.add_parser("dryrun", help="compiles without writing files")
     commands.add_parser("compile", help="compiles in current dir project")
     commands.add_parser("export", help="compiles & exports according to site.map")
-    commands.add_parser("publish", help="compiles & publishes (via scp) according to \"publish_scp\" option")
+    commands.add_parser("publish", help="exports via scp according to publish.map")
 
     # add flag arguments here
     parser.add_argument("-v", "--verbose", help="print changes", action="store_true")
     parser.add_argument("-o", "--output", help="set the output directory for export", action="store", dest='output')
-    parser.add_argument("-m", "--map", help="specify .map generator", action="store", dest='map')
+    parser.add_argument("-m", "--map", help="specify site.map generator", action="store", dest='map')
 
     # print help if no commands specified
     if len(sys.argv) == 1:

@@ -1,5 +1,6 @@
 {
     "macros_file": "macros.map",
+    "publish_file": "publish.map",
     "content_dir": "content/",
     "template_dir": "templates/",
     "output_dir": "../final/",
@@ -39,7 +40,6 @@
         "robots.txt",
         "main.css",
         "favicon.ico",
-        "media/",
         "assets/"
     ]
 }
