@@ -1,4 +1,5 @@
 {
+    "command": "rsync",
     "-i": "~/.ssh/keys/web.pem",
     "-P": "21098",
     "dst": "trispctx@tristancharpentier.com:public_html/"
