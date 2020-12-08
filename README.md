@@ -33,7 +33,7 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] create pretty spotify playlists page
   - [ ] add personal links to bottom of home page
   - [X] (plz one day) dark mode
-  - [ ] make website reach bottom of the page
+  - [X] make website reach bottom of the page
   - [ ] add image onClick to make it bigger
 
 ### Preprocessor
