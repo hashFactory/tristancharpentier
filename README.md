@@ -47,7 +47,7 @@ optional arguments:
   -v, --verbose         print changes
   -o OUTPUT, --output OUTPUT
                         set the output directory for export
-  -m MAP, --map MAP     specify .map generator
+  -m MAP, --map MAP     specify site.map generator
 
 possible commands:
   COMMAND
@@ -55,5 +55,6 @@ possible commands:
     dryrun              compiles without writing files
     compile             compiles in current dir project
     export              compiles & exports according to site.map
+    publish             exports via scp according to publish.map
 
 ```
