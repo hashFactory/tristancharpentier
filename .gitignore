@@ -1,3 +1,4 @@
 site.code-workspace
 .vscode/
 .refresh.sh.swp
+out/

@@ -3,7 +3,7 @@
     "publish_file": "publish.map",
     "content_dir": "content/",
     "template_dir": "templates/",
-    "output_dir": "../final/",
+    "output_dir": "out/",
     "pages": [
         {
             "name": "index",

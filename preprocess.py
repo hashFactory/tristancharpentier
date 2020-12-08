@@ -228,6 +228,7 @@ def export(future):
     generate_pages(future, macros)
     export_include()
 
+# uses export to publish website using publish_file directive
 def publish(future):
     global settings
 

@@ -15,8 +15,8 @@ then
     fi
 
     # compile website
-    echo $SCRIPT compile
-    $SCRIPT compile
+    echo "$SCRIPT export"
+    "$SCRIPT export"
 fi
 
 # fetch original and browser window ID
