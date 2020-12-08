@@ -216,7 +216,7 @@ def export_include():
         else:
             if V:
                 print("Copying " + i + " to " + output + i)
-            shutil.copy(i, output)
+            shutil.copy2(i, output)
 
 # export compiled site to specified directory
 def export(future):
@@ -261,6 +261,7 @@ def publish(future):
 
 # handles main functions
 def main(args):
+    global V, DRYRUN
     # set defaults
     macros_file = "macros.map"
     site_file = "site.map"
