@@ -23,6 +23,12 @@ body {
     text-decoration: none;
 }
 
+.basic-link {
+    font-family: "Arial";
+    color: black;
+    text-decoration: underline;
+}
+
 /* header */
 header {
     text-align: center;
@@ -263,5 +269,8 @@ section {
     }
     .playlist-title {
         color: #f6f2f7;
+    }
+    .basic-link {
+        color: #f7e9fa;
     }
 }
