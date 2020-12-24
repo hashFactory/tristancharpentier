@@ -2,41 +2,99 @@
 * {
     box-sizing: border-box;
 }
-
+html {
+    overflow: hidden;
+    height: 100%;
+}
 body
 {
     width:100%;
     margin:0 auto;
     padding:0px;
     font-family:arial;
-    background-color:black;
+    background-color: black;
 }
 #wrapper
 {
     text-align:left;
     margin:0 auto;
     padding:0px;
-    margin-top:20px;
+    margin-top: 20px;
     border: solid 2px #f6f2f7;
-    width:600px;
+    width:80%;
     display:flex;
+    display: -webkit-flex;
 }
 #playing {
     src: "pause.png";
 }
-#player
+.fade-in {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    backdrop-filter: brightness(100%) blur(8px) !important;
+    -webkit-backdrop-filter: brightness(100%) blur(8px) !important;
+}
+@keyframes fadeIn {
+    0% {backdrop-filter: brightness(10%) blur(8px);}
+    100% {backdrop-filter: brightness(100%) blur(8px);}
+}
+@-webkit-keyframes fadeIn {
+    0% {-webkit-backdrop-filter: brightness(10%) blur(8px);}
+    100% {-webkit-backdrop-filter: brightness(100%) blur(8px);}
+}
+
+.fade-out {
+    animation: fadeOut ease 3s;
+    -webkit-animation: fadeOut ease 3s;
+}
+@keyframes fadeOut {
+    0% {backdrop-filter: brightness(100%) blur(8px);}
+    100% {backdrop-filter: brightness(10%) blur(8px);}
+}
+@-webkit-keyframes fadeOut {
+    0% {-webkit-backdrop-filter: brightness(100%) blur(8px);}
+    100% {-webkit-backdrop-filter: brightness(10%) blur(8px);}
+}
+
+#player_container
 {
     flex-grow: 1;
-    background-color:black;
-    max-width:620px;
-    padding:5px;
-    padding-bottom: 0px;
-    color: #f6f2f7;
     display: flex;
     flex-direction: column;
+    color: #f6f2f7;
+
+    background-size: cover;
+    background-image: url('agar_agar_artwork_1.jpg');
 }
+#player {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    height:max-content;
+    overflow: hidden;
+    
+    padding:5px;
+    padding-bottom: 0px;
+    background: rgba(16, 16, 16, 0.6);
+}
+@supports (backdrop-filter: none) {
+    #player {
+        background: rgba(16, 16, 16, 0.6);
+        backdrop-filter: brightness(10%) blur(8px);
+    }
+  }
+@supports (-webkit-backdrop-filter: none) {
+    #player {
+        background: rgba(16, 16, 16, 0.6);
+        backdrop-filter: brightness(10%) blur(8px);
+        -webkit-backdrop-filter: brightness(10%) blur(8px);
+    }
+  }
+
 #track_info {
     flex: 1 1 auto;
+    z-index: 1;
 }
 #track_info h4 {
     margin-top: 2px;
@@ -69,15 +127,13 @@ input[type="image"]
     margin-bottom: 0px;
     margin-left: 0px;
 }
-#vol_img
-{
-    margin: 5px 5px 5px 5px;
-    width:20px;
-    height:20px;
-}
+
 #controls {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    z-index: 1;
 }
 #controls input[type="image"] {
     flex-basis: content;
@@ -87,16 +143,32 @@ input[type="image"]
     font-family: 'Courier New', Courier, monospace;
     margin: 5px 5px 5px 5px;
 }
+
 #timestamp {
     font-family: 'Courier New', Courier, monospace;
     font-size: normal;
+    line-height: normal;
     margin: 5px 5px 5px 5px;
+
 }
 
 #change_vol {
     height: 30px;
     width: 150px;
-    margin: 0 0 0 0;
+    margin: 0 10 0 0;
+    color: #f6f2f7;
+    flex: content;
+}
+#vol_img
+{
+    margin: 5px 5px 5px 5px;
+    width:20px;
+    height:20px;
+    flex: content;
+}
+
+#volume {
+    margin-left: auto;
 }
 
 @media only screen and (max-width: 620px) {
@@ -104,3 +176,60 @@ input[type="image"]
         width: 100%;
     }
 }
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 8px;
+    background: #f6f2f7;
+    cursor: pointer;
+    margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+  
+  /* All the same stuff for Firefox */
+  input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 8px;
+    border-radius: 0;
+    border-color: #f6f2f7;
+    background: #f6f2f7;
+    cursor: pointer;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    background: #f7e9fa;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background:#d3c3d6;
+  }
+  
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    background: #f7e9fa;
+  }

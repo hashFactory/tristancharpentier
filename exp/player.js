@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
 
-var player, playbutton, timestamp;
+var player, playbutton, timestamp, b, playerContainer;
 var shouldUpdate = false;
+
+function init() {
+  b = document.getElementsByTagName('body')[0];
+}
 
 function startplayer()
 {
@@ -10,7 +14,11 @@ function startplayer()
  player.controls = false;
  playButton.addEventListener("click", handlePlayButton, false);
  timestamp = document.getElementById("timestamp");
- //timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
+ bgArt = document.getElementById("page");
+
+ timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
+
+ playerContainer = document.getElementById("player");
 
  player.onloadedmetadata = function() {
     refreshTimestamp();
@@ -31,20 +39,28 @@ function stm(input) {
 }
 
 async function playAudio() {
+  //bgArt.style.backgroudImage = 'url(agar_agar_artwork_1.jpg)';
+  //console.log(bgArt.style.backgroudImage);
+  //b.style.background = "black url('agar_agar_artwork_1.jpg') no-repeat right top";
   try {
     await player.play();
-    shouldUpdate = true;
     playButton.setAttribute("src", "pause.png");
     playButton.classList.add("playing");
   } catch(err) {
     playButton.classList.remove("playing");
   }
+  shouldUpdate = true;
+  playerContainer.classList.remove("fade-out");
+  playerContainer.classList.add("fade-in");
 }
 
 function handlePlayButton() {
   if (player.paused) {
     playAudio();
   } else {
+    //b.style.background = "black";
+    playerContainer.classList.remove("fade-in");
+    playerContainer.classList.add("fade-out");
     player.pause();
     shouldUpdate = false;
     playButton.setAttribute("src", "play.png");
@@ -56,22 +72,6 @@ function refreshTimestamp() {
     timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
 }
 
-//setTimeout(refreshTimestamp, 1000);
-
-/*
-function play_aud()
-{
- player.play();
-}
-function pause_aud()
-{
- player.pause();
-}
-function stop_aud()
-{
- player.pause();
- player.currentTime = 0;
-}*/
 function change_vol()
 {
  player.volume=document.getElementById("change_vol").value;
