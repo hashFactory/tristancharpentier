@@ -29,6 +29,7 @@ player.ontimeupdate = function() {
 }
 }
 
+// convert number of seconds to string mm:ss
 function stm(input) {
     var mins = ~~((input % 3600) / 60);
     var secs = ~~input % 60;
@@ -70,6 +71,30 @@ function handlePlayButton() {
 
 function refreshTimestamp() {
     timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
+
+    var trackProgress = (player.currentTime / player.duration);
+    var sliderProgress = document.getElementById('trackSlider').offsetWidth * trackProgress;
+
+    document.getElementById('trackProgress').style.width = Math.round(sliderProgress) + "px";
+}
+
+function setLocation(percentage) {
+  player.currentTime = player.duration * percentage;
+}
+
+function resetTrack() {
+  player.currentTime = 0;
+}
+
+function setSongPosition(obj,e){
+  var songSliderWidth = obj.offsetWidth;
+  var evtobj=window.event? event : e;
+  clickLocation = e.clientX - obj.offsetLeft;
+
+  var percentage = (clickLocation/songSliderWidth);
+  console.log("" + obj.offsetLeft + "   " + clickLocation + "   " + percentage);
+
+  setLocation(percentage);
 }
 
 function change_vol()

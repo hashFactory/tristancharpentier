@@ -82,7 +82,7 @@ body
     width: inherit;
     height:max-content;
     overflow: hidden;
-    
+
     padding:5px;
     padding-bottom: 0px;
     background: rgba(16, 16, 16, 0.6);
@@ -149,26 +149,48 @@ input[type="image"]
 
 #controls {
     flex: 0 1 auto;
-    display: -webkit-inline-box;
+    display: flex;
+    align-items: stretch;
     width: 100%;
     flex-direction: row;
     z-index: 1;
 }
+
+#trackSlider {
+    min-width: 200;
+    flex-basis:  content;
+    height: 10px;
+    border: solid 2px #f6f2f7;
+    color: transparent;
+    vertical-align: middle;
+    background-color: transparent;
+    cursor: pointer;
+    flex: 1 1 auto;
+    margin: 5px;
+    margin-top: 8px;
+}
+
+#trackProgress {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    background: white;
+}
+
 #controls input[type="image"] {
     flex-basis: content;
-    margin: 5px 5px 5px 5px;
+    margin: 5px;
 }
 #controls p {
     font-family: 'Courier New', Courier, monospace;
-    margin: 5px 5px 5px 5px;
+    margin: 5px;
 }
 
 #timestamp {
     font-family: 'Courier New', Courier, monospace;
     font-size: normal;
     line-height: normal;
-    margin: 5px 5px 5px 5px;
-
+    margin: 5px;
 }
 
 #change_vol {
@@ -176,14 +198,12 @@ input[type="image"]
     width: 150px;
     margin: 0 10 0 0;
     color: #f6f2f7;
-    flex: content;
 }
 #vol_img
 {
     margin: 5px 5px 5px 5px;
     width:20px;
     height:20px;
-    flex: content;
 }
 
 #volume {
