@@ -14,7 +14,7 @@ function startplayer()
  player.controls = false;
  playButton.addEventListener("click", handlePlayButton, false);
  timestamp = document.getElementById("timestamp");
- bgArt = document.getElementById("page");
+ bgArt = document.getElementById("player");
 
  timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
 
@@ -50,8 +50,8 @@ async function playAudio() {
     playButton.classList.remove("playing");
   }
   shouldUpdate = true;
-  playerContainer.classList.remove("fade-out");
-  playerContainer.classList.add("fade-in");
+  bgArt.classList.remove("fade-out");
+  bgArt.classList.add("fade-in");
 }
 
 function handlePlayButton() {
@@ -59,8 +59,8 @@ function handlePlayButton() {
     playAudio();
   } else {
     //b.style.background = "black";
-    playerContainer.classList.remove("fade-in");
-    playerContainer.classList.add("fade-out");
+    bgArt.classList.remove("fade-in");
+    bgArt.classList.add("fade-out");
     player.pause();
     shouldUpdate = false;
     playButton.setAttribute("src", "play.png");

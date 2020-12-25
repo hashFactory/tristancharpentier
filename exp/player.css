@@ -14,14 +14,23 @@ body
     font-family:arial;
     background-color: black;
 }
+#page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#dummy {
+    flex: 1;
+}
 #wrapper
 {
+    flex: none;
+    margin-top: auto;
     text-align:left;
     margin:0 auto;
     padding:0px;
-    margin-top: 20px;
     border: solid 2px #f6f2f7;
-    width:80%;
+    width:100%;
     display:flex;
     display: -webkit-flex;
 }
@@ -92,22 +101,32 @@ body
     }
   }
 
-#track_info {
+#track {
     flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
     z-index: 1;
 }
-#track_info h4 {
+#track h4 {
     margin-top: 2px;
     margin-bottom: 2px;
-    text-align: left;
+    
     font-weight: normal;
 }
-#track_info h5 {
+#track h5 {
     margin-top: 2px;
     margin-bottom: 2px;
-    text-align: left;
+    
     font-weight: normal;
 }
+#track img {
+    
+    max-height:20px;
+    margin-left:2px;
+    margin-right:5px;
+    margin-top:2px;
+}
+
 #track_artist {
 
 }
@@ -130,7 +149,7 @@ input[type="image"]
 
 #controls {
     flex: 0 1 auto;
-    display: inline-flex;
+    display: -webkit-inline-box;
     width: 100%;
     flex-direction: row;
     z-index: 1;
@@ -171,9 +190,15 @@ input[type="image"]
     margin-left: auto;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 760px) {
     #wrapper {
         width: 100%;
+    }
+    #controls {
+        flex-direction: column;
+    }
+    #volume {
+        display: none;
     }
 }
 
