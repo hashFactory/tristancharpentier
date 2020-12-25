@@ -101,6 +101,13 @@ body
     }
   }
 
+#page_title {
+    color: #f6f2f7;
+    font-weight: bold;
+    justify-self: center;
+    text-align: center;;
+}
+
 #track {
     flex: 1 1 auto;
     display: flex;
@@ -110,21 +117,25 @@ body
 #track h4 {
     margin-top: 2px;
     margin-bottom: 2px;
-    
     font-weight: normal;
 }
 #track h5 {
     margin-top: 2px;
     margin-bottom: 2px;
-    
     font-weight: normal;
 }
 #track img {
-    
     max-height:20px;
     margin-left:2px;
     margin-right:5px;
     margin-top:2px;
+}
+
+.track_list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 #track_artist {

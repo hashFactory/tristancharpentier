@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
 
-var player, playbutton, timestamp, b, playerContainer;
+var player, playbutton, timestamp, b, playerContainer, trackList;
+var tracks = [];
 var shouldUpdate = false;
 
 function init() {
@@ -15,6 +16,8 @@ function startplayer()
  playButton.addEventListener("click", handlePlayButton, false);
  timestamp = document.getElementById("timestamp");
  bgArt = document.getElementById("player");
+
+ trackList = document.getElementsByClassName("track_list");
 
  timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
 
@@ -92,7 +95,6 @@ function setSongPosition(obj,e){
   clickLocation = e.clientX - obj.offsetLeft;
 
   var percentage = (clickLocation/songSliderWidth);
-  console.log("" + obj.offsetLeft + "   " + clickLocation + "   " + percentage);
 
   setLocation(percentage);
 }
@@ -100,4 +102,12 @@ function setSongPosition(obj,e){
 function change_vol()
 {
  player.volume=document.getElementById("change_vol").value;
+}
+
+function generate_library_track(num, title, artist, album, duration, src, art_src) {
+  var new_track = document.createElement('div');
+  new_track.id = 'lib_track';
+  // TODO: rest of this
+  trackList.append(new_track);
+  tracks.push(new_track);
 }
