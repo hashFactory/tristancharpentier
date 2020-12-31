@@ -1,31 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
 
-var trackTemplate = [
-
-]
-
-//function createLibraryTrack()
-/*
-var xmlhttp = new XMLHttpRequest();
-var myArr = [];
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    //myArr = JSON.parse(this.responseText);
-    //console.log(myArr[0]);
-    document.getElementById("track_list").innerHTML = this.responseText;
-  }
-};*/
-//xmlhttp.open("GET", "magna_opera.html", true);
-//xmlhttp.send();
-
 var player, playbutton, timestamp, b, playerContainer, trackList;
 var tracks = [];
 var shouldUpdate = false;
-
-var library = [ {id: 0, title: ""} ];
+var doc, songs;
+var playingID = 4;
 
 function init() {
   b = document.getElementsByTagName('body')[0];
+}
+
+function toggle_track(id) {
+  playingID = id;
+  if (bgArt.getElementsByClassName('track_title')[0].innerHTML != songs[id].getElementsByClassName('library_track_title')[0].innerHTML) {
+    bgArt.getElementsByClassName('track_title')[0].innerHTML = songs[id].getElementsByClassName('library_track_title')[0].innerHTML;
+    bgArt.getElementsByClassName('track_artist')[0].innerHTML = songs[id].getElementsByClassName('library_track_artist')[0].innerHTML;
+    bgArt.getElementsByClassName('album_title')[0].innerHTML = songs[id].getElementsByClassName('library_album_title')[0].innerHTML;
+    player.getElementsByClassName('music_src')[0].setAttribute('src', songs[id].getElementsByClassName('library_track_src')[0].getAttribute('href'));
+    timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
+    document.getElementById('album_art').setAttribute('src', songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
+    player.load();
+    refreshTimestamp();
+    document.getElementById('player_container').style.backgroudImage = songs[id].getElementsByClassName('library_art')[0].getAttribute('src');
+
+    player.onloadedmetadata = function() {
+       refreshTimestamp();
+   }
+
+   player.ontimeupdate = function() {
+       refreshTimestamp();
+   }
+  }
 }
 
 function startplayer()
@@ -33,12 +38,16 @@ function startplayer()
   fetch('/magna_opera.html').then(function (response) {
     return response.text();
   }).then(function (html) {
+    var parser = new DOMParser();
   	document.getElementById("track_list").innerHTML = html;
+    doc = parser.parseFromString(html, 'text/html');
+    songs = doc.getElementsByClassName('library_track');
   }).catch(function (err) {
   	// There was an error
   	console.warn('Something went wrong.', err);
   });
 
+ wrapper = document.getElementById('wrapper');
  player = document.getElementById('music_player');
  playButton = document.getElementById("play_button");
  player.controls = false;
@@ -77,6 +86,7 @@ async function playAudio() {
   //b.style.background = "black url('agar_agar_artwork_1.jpg') no-repeat right top";
   try {
     await player.play();
+    songs[playingID].getElementsByClassName('library_play_button')[0].setAttribute("src", "pause.png");
     playButton.setAttribute("src", "pause.png");
     playButton.classList.add("playing");
   } catch(err) {
@@ -90,6 +100,7 @@ async function playAudio() {
 function handlePlayButton() {
   if (player.paused) {
     playAudio();
+    songs[playingID].getElementsByClassName('library_play_button')[0].setAttribute("src", "play.png");
   } else {
     //b.style.background = "black";
     bgArt.classList.remove("fade-in");

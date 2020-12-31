@@ -122,12 +122,14 @@ input[type="image"]
     margin-left: 0;
 }
 #track_list {
-    flex: 1;
+    flex: 1 1 auto;
     display: flex;
+    overflow-y: scroll;
     flex-direction: column;
     width: 100%;
 }
 .library_track {
+  flex: 1 1 auto;
   display: flex;
   display: -webkit-flex;
   margin: 0 0 auto 0;
@@ -137,10 +139,10 @@ input[type="image"]
   color: #f6f2f7;
   border-bottom: solid 1px #f6f2f7;
 }
-#library_art {
+.library_art {
   flex-basis: content;
   margin: 0;
-  max-height: auto;
+  max-height: 6em;
   max-width: auto;
 }
 .library_track_info {
@@ -162,6 +164,12 @@ input[type="image"]
     font-weight: normal;
 }
 .library_track_control {
+  max-height: 30px;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+.library_play_button {
   max-height: 30px;
   margin-left: 2px;
   margin-right: 5px;

@@ -30,6 +30,7 @@ with open(playlist_json, 'r') as f:
         track_buf = track_buf.replace('|TITLE|', track['title'])
         track_buf = track_buf.replace('|ARTIST|', track['artist'])
         track_buf = track_buf.replace('|ALBUM|', track['album'])
+        track_buf = track_buf.replace('|ID|', str(i))
         track_buf = track_buf.replace('|FILE|', find_file(i))
         html_buffer += track_buf
         i += 1
