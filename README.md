@@ -27,14 +27,14 @@ My main github repo for my personal website. You can find it right [here](https:
 
 (this section can be seen in action [here](https://tristancharpentier.com/test/exp2). )
 * Playlist pages
-  - [ ] create custom music player
-  - [ ] create custom entries for songs
-  - [ ] make playing animation affect body background
-  - [ ] parse playlist.json
-    - [ ] fetch relevant metadata
-    - [ ] extract album covers
+  - [X] create custom music player
+  - [X] create custom entries for songs
+  - [X] make playing animation affect body background
+  - [X] parse playlist.json
+    - [X] fetch relevant metadata
+    - [X] extract album covers
     - [ ] extract dominant colors from covers
-    - [ ] output all to some tbd js database
+    - [X] output all to some tbd js database
   - [ ] integrate to preprocessor
 
 * Website
