@@ -68,6 +68,7 @@ function toggle_track(id) {
         document.body.style.backgroundImage = "url('" + songs[id].getElementsByClassName('library_art')[0].getAttribute('src') + "')";
         document.body.style.backgroundSize = "cover";
       })
+    bgArt.getElementsByTagName('a')[0].setAttribute('href', songs[id].getElementsByClassName('library_track_src')[0].getAttribute('href'));
 
     playAudio();
     refreshTimestamp();
