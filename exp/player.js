@@ -1,3 +1,14 @@
+const toDataURL = url => fetch(url)
+  .then(response => response.blob())
+  .then(blob => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    //reader.readAsDataURL(blob);
+    //console.log(reader.readAsDataURL(blob));
+    document.body.backgroundImage = "url(" + reader.readAsDataURL(blob) + ")";
+  }));
+
 document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
 
 var player, playbutton, timestamp, b, playerContainer, trackList;
@@ -5,9 +16,34 @@ var tracks = [];
 var shouldUpdate = false;
 var doc, songs;
 var playingID = 4;
+var bgImage, bg;
 
 function init() {
   b = document.getElementsByTagName('body')[0];
+}
+/*
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var random = Math.random();
+        console.log(this.response, typeof this.response);
+        var img = document.getElementsByClassName('player_container')[0];
+        var url = window.URL || window.webkitURL;
+        console.log(img);
+        img.style.background = url.createObjectURL(this.response);
+        console.log(img.style.background);
+        console.log(url.createObjectURL(this.response));
+        img.setAttribute("style: ", "background-image: url(data:image/jpeg," + url.createObjectURL(this.response) + ")"));
+    }
+}*/
+function getImage(fetchURL, bg){
+  fetch(fetchURL)
+  .then(response => response.blob())
+  .then(images => {
+      // Then create a local URL for that image and print it
+      bg.style.backgroundImage = URL.createObjectURL(images);
+
+  })
 }
 
 function toggle_track(id) {
@@ -20,8 +56,24 @@ function toggle_track(id) {
     timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
     document.getElementById('album_art').setAttribute('src', songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
     player.load();
+    //document.body.background = "url(data:image/jpeg;base64," + getBase64Image(songs[id].getElementsByClassName('library_art')[0].getAttribute('src')).then(convertBlobToBase64) + ")";
+    //document.body.setAttribute("style", "background-image: url(data:image/jpeg;" + songs[id].getElementsByClassName('library_art')[0].getAttribute('src') + ")");
+    //xhr.open('GET', songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
+    //console.log(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
+    //xhr.responseType = 'blob';
+    //xhr.send();
+
+    toDataURL(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'))
+      .then(dataUrl => {
+        console.log(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
+        document.body.style.backgroundImage = "url('" + songs[id].getElementsByClassName('library_art')[0].getAttribute('src') + "')";
+        document.body.style.backgroundSize = "cover";
+      })
+
+    playAudio();
     refreshTimestamp();
-    document.getElementById('player_container').style.backgroudImage = songs[id].getElementsByClassName('library_art')[0].getAttribute('src');
+    //getImage(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'), document.getElementsByClassName('player_container')[0]);
+    //document.getElementsByClassName('player_container')[0].style.backgroudImage = src;
 
     player.onloadedmetadata = function() {
        refreshTimestamp();
@@ -69,7 +121,6 @@ player.ontimeupdate = function() {
     refreshTimestamp();
 }
 }
-
 // convert number of seconds to string mm:ss
 function stm(input) {
     var mins = ~~((input % 3600) / 60);
@@ -88,13 +139,13 @@ async function playAudio() {
     await player.play();
     songs[playingID].getElementsByClassName('library_play_button')[0].setAttribute("src", "pause.png");
     playButton.setAttribute("src", "pause.png");
-    playButton.classList.add("playing");
+    playButton.add("playing");
   } catch(err) {
-    playButton.classList.remove("playing");
+    playButton.remove("playing");
   }
   shouldUpdate = true;
-  bgArt.classList.remove("fade-out");
-  bgArt.classList.add("fade-in");
+  document.body.classList.remove("fade-out");
+  document.body.classList.add("fade-in");
 }
 
 function handlePlayButton() {
@@ -103,8 +154,8 @@ function handlePlayButton() {
     songs[playingID].getElementsByClassName('library_play_button')[0].setAttribute("src", "play.png");
   } else {
     //b.style.background = "black";
-    bgArt.classList.remove("fade-in");
-    bgArt.classList.add("fade-out");
+    document.body.classList.remove("fade-in");
+    document.body.classList.add("fade-out");
     player.pause();
     shouldUpdate = false;
     playButton.setAttribute("src", "play.png");
@@ -142,12 +193,4 @@ function setSongPosition(obj,e){
 function change_vol()
 {
  player.volume=document.getElementById("change_vol").value;
-}
-
-function generate_library_track(num, title, artist, album, duration, src, art_src) {
-  var new_track = document.createElement('div');
-  new_track.id = 'lib_track';
-  // TODO: rest of this
-  trackList.append(new_track);
-  tracks.push(new_track);
 }
