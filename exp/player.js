@@ -4,6 +4,8 @@ var player, playbutton, timestamp, b, playerContainer, trackList;
 var tracks = [];
 var shouldUpdate = false;
 
+var library = [ {id: 0, title: ""} ];
+
 function init() {
   b = document.getElementsByTagName('body')[0];
 }
