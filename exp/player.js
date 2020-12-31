@@ -65,7 +65,6 @@ function toggle_track(id) {
 
     toDataURL(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'))
       .then(dataUrl => {
-        console.log(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
         document.body.style.backgroundImage = "url('" + songs[id].getElementsByClassName('library_art')[0].getAttribute('src') + "')";
         document.body.style.backgroundSize = "cover";
       })
@@ -139,9 +138,9 @@ async function playAudio() {
     await player.play();
     songs[playingID].getElementsByClassName('library_play_button')[0].setAttribute("src", "pause.png");
     playButton.setAttribute("src", "pause.png");
-    playButton.add("playing");
+    //playButton.add("playing");
   } catch(err) {
-    playButton.remove("playing");
+    //playButton.remove("playing");
   }
   shouldUpdate = true;
   document.body.classList.remove("fade-out");
@@ -159,7 +158,7 @@ function handlePlayButton() {
     player.pause();
     shouldUpdate = false;
     playButton.setAttribute("src", "play.png");
-    playButton.classList.remove("playing");
+    //playButton.classList.remove("playing");
   }
 }
 
