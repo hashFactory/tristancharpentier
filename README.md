@@ -25,6 +25,18 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] add `print` command that outputs all the settings it understands
   - [ ] create documentation for all .map files
 
+(this section can be seen in action [here](https://tristancharpentier.com/test/exp2). )
+* Playlist pages
+  - [X] create custom music player
+  - [X] create custom entries for songs
+  - [X] make playing animation affect body background
+  - [X] parse playlist.json
+    - [X] fetch relevant metadata
+    - [X] extract album covers
+    - [ ] extract dominant colors from covers
+    - [X] output all to some tbd js database
+  - [ ] integrate to preprocessor
+
 * Website
   - [X] mobile responsiveness
   - [X] get rid of all hardcoded style from html

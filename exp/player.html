@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="player.js"></script>
+        <link rel="stylesheet" type="text/css" href="player.css">
+    </head>
+    <body onload="init()">
+        <div id="page">
+            <div id=page_title>
+                <h1>MAGNA OPERA</h1>
+            </div>
+            <div id="track_list">
+            </div>
+        <div id="wrapper">
+            <img src="agar_agar_artwork_1.jpg" id="album_art" type='image/jpeg'>
+            <div class='player_container'>
+                <div id='player'>
+                    <div id='track'>
+                        <div id='track_info'>
+                            <div class='track_header'><span class='track_title'>I'm That Guy</span> by <span class='track_artist'>Agar Agar</span></div>
+                            <div class='album_title'>Cardan</div>
+                        </div>
+                        <div id='track_links'>
+                        <a href="agar_agar.m4a" download><img src="download_icon.png"></a>
+                    </div>
+                    </div>
+                    <div id="controls">
+                        <audio id="music_player">
+                            <source class="music_src" src="agar_agar.m4a"/>
+                        </audio>
+                        <input type="image" src="play.png" id="play_button">
+                        <p id="timestamp" ondblclick="resetTrack()"></p>
+                        <div id='trackSlider' onmouseup="setSongPosition(this, event)" onclick="setSongPosition(this, event)">
+                            <div id='trackProgress'></div>
+                        </div>
+                        <div id="volume">
+                            <img src="volume.png" id="vol_img">
+                            <input type="range" id="change_vol" onchange="change_vol()" step="0.01" min="0" max="1" value="0.8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
