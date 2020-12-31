@@ -1,5 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
 
+var trackTemplate = [
+
+]
+
+//function createLibraryTrack()
+/*
+var xmlhttp = new XMLHttpRequest();
+var myArr = [];
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    //myArr = JSON.parse(this.responseText);
+    //console.log(myArr[0]);
+    document.getElementById("track_list").innerHTML = this.responseText;
+  }
+};*/
+//xmlhttp.open("GET", "magna_opera.html", true);
+//xmlhttp.send();
+
 var player, playbutton, timestamp, b, playerContainer, trackList;
 var tracks = [];
 var shouldUpdate = false;
@@ -12,6 +30,15 @@ function init() {
 
 function startplayer()
 {
+  fetch('/magna_opera.html').then(function (response) {
+    return response.text();
+  }).then(function (html) {
+  	document.getElementById("track_list").innerHTML = html;
+  }).catch(function (err) {
+  	// There was an error
+  	console.warn('Something went wrong.', err);
+  });
+
  player = document.getElementById('music_player');
  playButton = document.getElementById("play_button");
  player.controls = false;

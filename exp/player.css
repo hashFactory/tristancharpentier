@@ -106,12 +106,6 @@ body
     margin-right: 5px;
     margin-top: 2px;
 }
-.track_list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
 input[type="image"]
 {
     text-align: left;
@@ -127,6 +121,62 @@ input[type="image"]
     margin-bottom: 0;
     margin-left: 0;
 }
+#track_list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.library_track {
+  display: flex;
+  display: -webkit-flex;
+  margin: 0 0 auto 0;
+  padding: 0;
+  width: 100%;
+  height: 6em;
+  color: #f6f2f7;
+  border-bottom: solid 1px #f6f2f7;
+}
+#library_art {
+  flex-basis: content;
+  margin: 0;
+  max-height: auto;
+  max-width: auto;
+}
+.library_track_info {
+  flex: 1 1 auto;
+  display: inline;
+}
+.library_track_header {
+  margin-top: 2px;
+  #margin-bottom: 2px;
+}
+.library_track_title {
+  font-weight: bolder;
+}
+.library_track_artist {
+
+}
+.library_album_title {
+    margin-top: 2px;
+    font-weight: normal;
+}
+.library_track_control {
+  max-height: 30px;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+.library_track_links {
+  max-height: 20px;
+  margin-left: 2px;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+.library_download_button {
+
+}
+
 
 #controls {
     flex: 0 1 auto;
