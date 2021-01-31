@@ -6,6 +6,7 @@ import sys
 import argparse
 import shutil
 import subprocess
+from pathlib import Path
 
 # TODO
 # TEMPORARY (replace once I have proper options for content locations)
@@ -60,7 +61,7 @@ def generate_pages(future, macros):
         with open(settings['content_dir'] + fu.filename, 'r') as content:
             # modify template
             for m in range(1, 3):
-                    template = template.replace(macros[m].name, open("templates/" + macros[m].filename, 'r').read())
+                template = template.replace(macros[m].name, open("templates/" + macros[m].filename, 'r').read())
             template = template.replace("<|ARTICLE|>", content.read())
             template = template.replace("<|TITLE|>", fu.title)
 
@@ -217,7 +218,31 @@ def export_include():
         if i[-1] == '/':
             if V:
                 print("Copying contents of " + i + " to " + output + i)
-            shutil.copytree(i, output + i)
+            # TODO: clean up how ugly this is
+            files = list(Path(i).rglob('*.*'))
+            
+            for f in files:
+                f_parent, f_name = os.path.split(Path(f))
+                # make new directory in output if it doesn't exist yet
+                if not os.path.isdir(output + f_parent):
+                    if V:
+                        print("makedirs(" + str(output + f_parent) + ")")
+                    os.makedirs(output + f_parent, exist_ok=True)
+
+                # if it doesn't exist yet, copy
+                if not os.path.exists(output + str(f)):
+                    if V:
+                        print("Copying " + str(f) + " to " + (output + str(f)) + " since it doesn't exist")
+                    shutil.copy2(f, output + str(f))
+                # if source file is newer, copy
+                elif os.path.getmtime(f) > os.path.getmtime(output + str(f)):
+                    if V:
+                        print("Copying " + str(f) + " to " + (output + str(f)) + " since source is newer")
+                    shutil.copy2(f, output + str(f))
+                # if we don't need to copy
+                else:
+                    if V:
+                        print("Skipping " + str(f) + " since it already exists " + (output + str(f)))
         else:
             if V:
                 print("Copying " + i + " to " + output + i)
@@ -227,9 +252,10 @@ def export_include():
 def export(future):
     global settings
     macros = read_macros_map(settings['macros_file'])
-    if os.path.exists(settings['output_dir']):
-        shutil.rmtree(settings['output_dir'])
-    os.mkdir(settings['output_dir'])
+    #if os.path.exists(settings['output_dir']):
+    #    shutil.rmtree(settings['output_dir'])
+    if not os.path.exists(settings['output_dir']):
+        os.mkdir(settings['output_dir'])
     generate_pages(future, macros)
     export_include()
 
