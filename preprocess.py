@@ -58,16 +58,21 @@ def generate_pages(future, macros):
     for fu in future:
         template = get_page("")
         with open(settings['content_dir'] + fu.filename, 'r') as content:
-            with open(settings['output_dir'] + fu.filename, 'w') as future_page:
-                for m in range(1, 3):
+            # modify template
+            for m in range(1, 3):
                     template = template.replace(macros[m].name, open("templates/" + macros[m].filename, 'r').read())
-                template = template.replace("<|ARTICLE|>", content.read())
-                template = template.replace("<|TITLE|>", fu.title)
-                if not DRYRUN:
+            template = template.replace("<|ARTICLE|>", content.read())
+            template = template.replace("<|TITLE|>", fu.title)
+
+            # write to output file
+            if not DRYRUN:
+                with open(settings['output_dir'] + fu.filename, 'w') as future_page:
                     future_page.write(template)
-                if V:
-                    print(template)
-                future_page.close()
+                    future_page.close()
+            
+            # output html contents if the user wants
+            if V:
+                print(template)
             content.close()
 
 # read the pages json into an object
