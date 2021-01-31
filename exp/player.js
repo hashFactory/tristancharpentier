@@ -1,11 +1,10 @@
+// ripped from somewhere, needed some way to fetch blob from image
 const toDataURL = url => fetch(url)
   .then(response => response.blob())
   .then(blob => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onloadend = () => resolve(reader.result);
     reader.onerror = reject;
-    //reader.readAsDataURL(blob);
-    //console.log(reader.readAsDataURL(blob));
     document.body.backgroundImage = "url(" + reader.readAsDataURL(blob) + ")";
   }));
 
@@ -21,72 +20,47 @@ var bgImage, bg;
 function init() {
   b = document.getElementsByTagName('body')[0];
 }
-/*
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var random = Math.random();
-        console.log(this.response, typeof this.response);
-        var img = document.getElementsByClassName('player_container')[0];
-        var url = window.URL || window.webkitURL;
-        console.log(img);
-        img.style.background = url.createObjectURL(this.response);
-        console.log(img.style.background);
-        console.log(url.createObjectURL(this.response));
-        img.setAttribute("style: ", "background-image: url(data:image/jpeg," + url.createObjectURL(this.response) + ")"));
-    }
-}*/
+
 function getImage(fetchURL, bg){
   fetch(fetchURL)
   .then(response => response.blob())
   .then(images => {
-      // Then create a local URL for that image and print it
+      // then create a local URL for that image and print it
       bg.style.backgroundImage = URL.createObjectURL(images);
-
   })
 }
 
 function toggle_track(id) {
+  // set playingID to the selected ID
   playingID = id;
+  // if the track title is different
   if (bgArt.getElementsByClassName('track_title')[0].innerHTML != songs[id].getElementsByClassName('library_track_title')[0].innerHTML) {
+    // change all the attributes of the player to match the new value
     bgArt.getElementsByClassName('track_title')[0].innerHTML = songs[id].getElementsByClassName('library_track_title')[0].innerHTML;
     bgArt.getElementsByClassName('track_artist')[0].innerHTML = songs[id].getElementsByClassName('library_track_artist')[0].innerHTML;
     bgArt.getElementsByClassName('album_title')[0].innerHTML = songs[id].getElementsByClassName('library_album_title')[0].innerHTML;
     player.getElementsByClassName('music_src')[0].setAttribute('src', songs[id].getElementsByClassName('library_track_src')[0].getAttribute('href'));
     timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
     document.getElementById('album_art').setAttribute('src', songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
-    player.load();
-    //document.body.background = "url(data:image/jpeg;base64," + getBase64Image(songs[id].getElementsByClassName('library_art')[0].getAttribute('src')).then(convertBlobToBase64) + ")";
-    //document.body.setAttribute("style", "background-image: url(data:image/jpeg;" + songs[id].getElementsByClassName('library_art')[0].getAttribute('src') + ")");
-    //xhr.open('GET', songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
-    //console.log(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'));
-    //xhr.responseType = 'blob';
-    //xhr.send();
-
+    bgArt.getElementsByTagName('a')[0].setAttribute('href', songs[id].getElementsByClassName('library_track_src')[0].getAttribute('href'));
+    
+    // fetch album art and convert to base64 to set to background
     toDataURL(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'))
       .then(dataUrl => {
         document.body.style.backgroundImage = "url('" + songs[id].getElementsByClassName('library_art')[0].getAttribute('src') + "')";
         document.body.style.backgroundSize = "cover";
       })
-    bgArt.getElementsByTagName('a')[0].setAttribute('href', songs[id].getElementsByClassName('library_track_src')[0].getAttribute('href'));
 
+    // toggle the player
+    player.load();
     playAudio();
     refreshTimestamp();
-    //getImage(songs[id].getElementsByClassName('library_art')[0].getAttribute('src'), document.getElementsByClassName('player_container')[0]);
-    //document.getElementsByClassName('player_container')[0].style.backgroudImage = src;
-
-    player.onloadedmetadata = function() {
-       refreshTimestamp();
-   }
-
-   player.ontimeupdate = function() {
-       refreshTimestamp();
-   }
   }
 }
 
 function startplayer()
 {
+  // get the pre-gen html file
   fetch('/magna_opera.html').then(function (response) {
     return response.text();
   }).then(function (html) {
@@ -99,21 +73,22 @@ function startplayer()
   	console.warn('Something went wrong.', err);
   });
 
- wrapper = document.getElementById('wrapper');
- player = document.getElementById('music_player');
- playButton = document.getElementById("play_button");
- player.controls = false;
- playButton.addEventListener("click", handlePlayButton, false);
- timestamp = document.getElementById("timestamp");
- bgArt = document.getElementById("player");
+  // set all variables that will be reused throughout
+  wrapper = document.getElementById('wrapper');
+  player = document.getElementById('music_player');
+  playButton = document.getElementById("play_button");
+  player.controls = false;
+  playButton.addEventListener("click", handlePlayButton, false);
+  timestamp = document.getElementById("timestamp");
+  bgArt = document.getElementById("player");
 
- trackList = document.getElementsByClassName("track_list");
+  trackList = document.getElementsByClassName("track_list");
 
- timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
+  timestamp.innerHTML = "" + stm(player.currentTime) + " / " + stm(player.duration);
 
- playerContainer = document.getElementById("player");
+  playerContainer = document.getElementById("player");
 
- player.onloadedmetadata = function() {
+  player.onloadedmetadata = function() {
     refreshTimestamp();
 }
 
@@ -121,6 +96,7 @@ player.ontimeupdate = function() {
     refreshTimestamp();
 }
 }
+
 // convert number of seconds to string mm:ss
 function stm(input) {
     var mins = ~~((input % 3600) / 60);
@@ -132,14 +108,10 @@ function stm(input) {
 }
 
 async function playAudio() {
-  //bgArt.style.backgroudImage = 'url(agar_agar_artwork_1.jpg)';
-  //console.log(bgArt.style.backgroudImage);
-  //b.style.background = "black url('agar_agar_artwork_1.jpg') no-repeat right top";
   try {
     await player.play();
     songs[playingID].getElementsByClassName('library_play_button')[0].setAttribute("src", "pause.png");
     playButton.setAttribute("src", "pause.png");
-    //playButton.add("playing");
   } catch(err) {
     //playButton.remove("playing");
   }
@@ -190,7 +162,6 @@ function setSongPosition(obj,e){
   setLocation(percentage);
 }
 
-function change_vol()
-{
- player.volume=document.getElementById("change_vol").value;
+function change_vol() {
+  player.volume=document.getElementById("change_vol").value;
 }

@@ -25,7 +25,7 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] add `print` command that outputs all the settings it understands
   - [ ] create documentation for all .map files
 
-(this section can be seen in action [here](https://tristancharpentier.com/test/exp2). )
+(this section can be seen in action [here](https://tristancharpentier.com/test/exp6))
 * Playlist pages
   - [X] create custom music player
   - [X] create custom entries for songs
@@ -47,6 +47,7 @@ My main github repo for my personal website. You can find it right [here](https:
   - [X] (plz one day) dark mode
   - [X] make website reach bottom of the page
   - [ ] add image onClick to make it bigger
+  - [ ] create projects page
 
 ### Preprocessor
 ```
@@ -68,5 +69,4 @@ possible commands:
     compile             compiles in current dir project
     export              compiles & exports according to site.map
     publish             exports via scp according to publish.map
-
 ```

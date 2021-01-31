@@ -225,7 +225,7 @@ section {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
     body {
         background-color: black;
     }
