@@ -12,6 +12,12 @@
             "title": "Tristan's Homepage"
         },
         {
+            "name": "projects",
+            "type": "content",
+            "filename": "projects.html",
+            "title": "Tristan's Projects"
+        },
+        {
             "name": "about",
             "type": "content",
             "filename": "about.html",

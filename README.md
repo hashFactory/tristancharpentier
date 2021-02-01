@@ -70,3 +70,10 @@ possible commands:
     export              compiles & exports according to site.map
     publish             exports via scp according to publish.map
 ```
+
+#### HOW TO
+* Add a page
+  1. create content page in content/
+  2. add required assets and media to appropriate locations
+  3. if should be nav-accessible, add entry into nav.html
+  4. add directives to site.map

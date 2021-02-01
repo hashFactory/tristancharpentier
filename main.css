@@ -42,6 +42,69 @@ header {
     font-family: "Arial";
 }
 
+/* project */
+.project {
+    border-bottom: 1px dashed darkgray;
+    margin-bottom: 20px;
+}
+
+/* bullet list for dark mode */
+.dark-bullet ul {
+    list-style: none;
+}
+
+.dark-bullet ul li::before {
+    content: "\2022";
+    color: #f6f2f7;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.dark-bullet li:last-child {
+    flex-grow: 10;
+}
+
+/* gallery */
+.gallery {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #f6f2f7;
+    border-style: 1px solid;
+    list-style: none;
+    margin-top: 0px;
+}
+
+.gallery li {
+    height: 40vh;
+    flex-grow: 1;
+}
+
+.gallery li img {
+    max-height: 100%;
+    max-width: 400px;
+    min-width: 33%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.gallery li video {
+    max-height: 100%;
+    max-width: 400px;
+    min-width: 33%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.border {
+    color: #f6f2f7;
+    border: 1px solid #f6f2f7;
+    border-style: 1px solid;
+    font-size: large;
+    background-color: #2f1f33;
+}
+
 /* music & playlist pages */
 .mix {
     display: flex;
@@ -194,6 +257,18 @@ section {
         flex-direction: column;
         flex-grow: 1;
     }
+    .gallery {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .gallery li {
+        height:min-content;
+    }
+    .gallery li img {
+        
+    }
+    .gallery li video {
+    }
     nav, article {
         width: 100%;
     }
@@ -263,6 +338,9 @@ section {
     }
     p {
         color: white;
+    }
+    h3 {
+        color: #f6f2f7;
     }
     .playlist-page-header {
         color: white;

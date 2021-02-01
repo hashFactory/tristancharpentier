@@ -1,0 +1,157 @@
+<div class="content-title">
+    <h2>Here are some of my random personal projects</h2>
+</div>
+
+<div class="project">
+    <div class="project-title">
+        <h3><a class="basic-link" href="https://github.com/hashFactory/BlenderRenderTerrain">BlenderRenderTerrain</a></h3>
+    </div>
+    <p>
+        Randomly came upon this page <a class="basic-link" href="https://viewer.nationalmap.gov/basic/#/">https://viewer.nationalmap.gov/basic/</a>.
+        It's the main page you're supposed to use to access USGS (US Geographical Survey) datasets.
+        Turns out you can download DEM (Digital Elevation Model) tiles which are rectangular images where each pixel's value describes the elevation at that spot.
+        So I downloaded them for my region and started importing them into <a class="basic-link" href="https://www.qgis.org/">QGIS</a> (software used for processing / analyzing / doing <i>anything</i> with geographical data).
+        I first found out about this software when I worked on <a class="basic-link" href="https://github.com/hashFactory/ImThirsty">ImThirsty</a>.
+        <br><br>
+        So then with these tiles I started wondering what I could do with them. The first thing that came to mind was to try to convert these images into a 3D mesh I could import into Blender.
+        Many, many, trials later I finally found a piece of software called <a class="basic-link" href="https://github.com/heremaps/tin-terrain">tin-terrain</a> that lets you do exactly that using your choice between a few different algorithms (terra, zemlya, or a dense packing).
+        The problem was each of these tiles is 10000x10000 pixels (each pixel being 1m<sup>2</sup>). My laptop was not up to the task of converting a hundred million vertices into a mesh.
+        Trying to process the standard 10km x 10km tile would always lead to my laptop running out of memory. So I decided to use some of my free Google Cloud Compute credits to run the same program on a Ubuntu vm.
+        I kept starting tin-terrain but the vm would always run out of memory eventually. In the end I found ~30GB of ram would get the job done.
+        <br><br>
+        Rest will be written later lol (this is a WIP after all).
+    </p>
+    <div>
+        <details>
+            <summary class="border">
+                Click here to see gallery
+            </summary>
+            <ul class="gallery">
+                <li>
+                    <img src="assets/projects/BlenderRenderTerrain/2.0_bad_render.png">
+                </li>
+                <li>
+                    <video controls>
+                        <source src="assets/projects/BlenderRenderTerrain/demo_blender_import_script.mov" type="video/mp4">
+                            Your browser cannot play this video :(
+                    </video>
+                </li>
+                <li>
+                    <img src="assets/projects/BlenderRenderTerrain/demo.gif">
+                </li>
+                <li>
+                    <img src="assets/projects/BlenderRenderTerrain/2020-11-03.23.35.58.png">
+                </li>
+                <li>
+                    <img src="assets/projects/BlenderRenderTerrain/2020-11-03.23.36.18.png">
+                </li>
+            
+                <li>
+                    <video controls>
+                        <source src="assets/projects/BlenderRenderTerrain/2020-10-08.02.34.09.mov" type="video/mp4">
+                            Your browser cannot play this video :(
+                    </video>
+                </li>
+                <li>
+                    <video controls>
+                        <source src="assets/projects/BlenderRenderTerrain/2020-10-08.05.04.27.mov" type="video/mp4">
+                            Your browser cannot play this video :(
+                    </video>
+                </li>
+                <li>
+                    <img src="assets/projects/BlenderRenderTerrain/col1.png">
+                </li>
+                <li>
+                    <img src="assets/projects/BlenderRenderTerrain/col4.png">
+                </li>
+                <li>
+                    <img src="assets/projects/BlenderRenderTerrain/col5.png">
+                </li>
+
+            </ul>
+        </details>
+    </div>
+</div>
+
+<div class="project">
+    <div class="project-title">
+        <h3 class="basic-link">Fashion</h3>
+    </div>
+    <p>
+        Was and still am somewhat interested in design and fashion.
+        <br><br>
+        Here is a little concept I made a while ago: <a class="basic-link" href="assets/projects/Fashion/concept-hoodie-final.pdf">concept-hoodie-final.pdf</a>.
+        <br>
+        Also screen recordings of the making of: <small>(youtube links in chronological order)</small>
+        <div class="dark-bullet">
+            <ul>
+                <li>
+                    <a class="basic-link" href="https://www.youtube.com/watch?v=DPwPGlhEHpI">Clo3D demo hoodie</a>
+                </li>
+                <li>
+                    <a class="basic-link" href="https://www.youtube.com/watch?v=zc2CjLTYA1c">Hoodie done</a>
+                </li>
+                <li>
+                    <a class="basic-link" href="https://www.youtube.com/watch?v=rzYIKODsRMs">CLO3D - Tristan's hoodie concept</a>
+                </li>
+            </ul>
+        </div>
+    </p>
+</div>
+
+<div class="project">
+    <div class="project-title">
+        <h3><a class="basic-link" href="https://github.com/hashFactory/FlowSolver">FlowSolver</a></h3>
+    </div>
+    <p>
+        A (finally) working Flow (from BigDuckGames) solver. Implemented in java. Project is linked on my github right here ^.
+        <br><br>
+        You can find a non-working <a class="basic-link" href="https://github.com/hashFactory/RustyFlow">RustyFlow</a> (Rust) attempt here.
+    </p>
+</div>
+
+<div class="project">
+    <div class="project-title">
+        <h3><a class="basic-link">Gallery of random things</a></h3>
+    </div>
+    <p>
+        <details>
+            <summary class="border">
+                Click here to see gallery
+            </summary>
+        <ul class="gallery">
+            <li>
+                <img src="assets/bg_loop_2.gif">
+            </li>
+            <li>
+                <img src="assets/house_childhood.jpg">
+            </li>
+            <li>
+                <img src="assets/chill.jpg">
+            </li>
+            <li>
+                <img src="assets/inverse.jpg">
+            </li>
+            <li>
+                <img src="assets/transition_v2.jpg">
+            </li>
+            <li>
+                <img src="assets/transition.jpg">
+            </li>
+            <li>
+                <img src="assets/lofi.jpg">
+            </li>
+            <li>
+                <img src="assets/more.jpg">
+            </li>
+            <li>
+                <img src="assets/more_chill.jpg">
+            </li>
+            <li>
+                <img src="assets/r_techno_top.jpg">
+            </li>
+            
+        </ul>
+        </details>
+        </p>
+</div>
