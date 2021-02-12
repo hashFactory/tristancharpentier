@@ -2,6 +2,9 @@
 
 My main github repo for my personal website. You can find it right [here](https://tristancharpentier.com).
 
+`out/` contains the website once exported.
+Look at the bottom of this readme to see how to compile this website.
+
 ### TODO:
 
 * Preprocessor (preprocessor.py)
@@ -21,9 +24,12 @@ My main github repo for my personal website. You can find it right [here](https:
   - [ ] eventually have a proper settings class
   - [ ] add error handling
   - [ ] color output
-  - [ ] only make `export` rmdir if compilation was successful
+  - [X] only make `export` rmdir if compilation was successful
   - [ ] add `print` command that outputs all the settings it understands
   - [ ] create documentation for all .map files
+  - [ ] figure out solution for growing /assets size
+  - [ ] add instructions to readme on how to compile
+  - [ ] integrate music page into main page
 
 (this section can be seen in action [here](https://tristancharpentier.com/test/exp6))
 * Playlist pages
@@ -47,7 +53,7 @@ My main github repo for my personal website. You can find it right [here](https:
   - [X] (plz one day) dark mode
   - [X] make website reach bottom of the page
   - [ ] add image onClick to make it bigger
-  - [ ] create projects page
+  - [X] create projects page
 
 ### Preprocessor
 ```
