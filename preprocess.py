@@ -290,6 +290,14 @@ def publish(future):
     else:
         print("Success!")
 
+# check if user really wants to populate 
+def check_if_user_compile():
+    print("""It is generally preferred to use the export functionality. 
+This will compile the project into the current directory. 
+Are you sure this is what you want? [y/n]  """)
+    choice = input().lower()
+    return "y" in choice
+
 # handles main functions
 def main(args):
     global V, DRYRUN
@@ -315,7 +323,10 @@ def main(args):
     if args.command == 'clean':
         clean(future)
     elif args.command == 'compile':
-        compile(future)
+        if check_if_user_compile():
+            compile(future)
+        else:
+            print("Exiting...")
     elif args.command == 'dryrun':
         DRYRUN = True
         compile(future)
@@ -333,7 +344,7 @@ if __name__ == '__main__':
     commands = parser.add_subparsers(title='possible commands', dest='command', metavar='COMMAND')
     commands.add_parser("clean", help="deletes compiled files")
     commands.add_parser("dryrun", help="compiles without writing files")
-    commands.add_parser("compile", help="compiles in current dir project")
+    commands.add_parser("compile", help="compiles in current dir project (deprecated, use export)")
     commands.add_parser("export", help="compiles & exports according to site.map")
     commands.add_parser("publish", help="exports via scp according to publish.map")
 
