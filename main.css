@@ -65,6 +65,13 @@ header {
     flex-grow: 10;
 }
 
+/* stream */
+.stream {
+    width: fit-content;
+    max-width: 720px;
+    height: auto;
+}
+
 /* gallery */
 .gallery {
     display: -webkit-flex;
@@ -89,7 +96,7 @@ header {
     vertical-align: bottom;
 }
 
-.gallery li video {
+.gallery-video {
     max-height: 100%;
     max-width: 400px;
     min-width: 33%;
@@ -265,9 +272,10 @@ section {
         height:min-content;
     }
     .gallery li img {
-        
+        max-width: 100%;
     }
     .gallery li video {
+        max-width: 100%;
     }
     nav, article {
         width: 100%;
