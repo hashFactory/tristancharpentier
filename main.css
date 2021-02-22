@@ -90,20 +90,24 @@ header {
 .gallery li {
     flex-grow: 1;
     flex-basis: 50%;
+    object-fit: contain;
+}
+
+#gallery-small li {
+    flex-grow: 1;
+    flex-basis: 33%;
 }
 
 .gallery li img {
     max-height: 100%;
     max-width: 100%;
     min-width: 20%;
-    object-fit: cover;
 }
 
 .gallery-video {
     max-height: 100%;
     max-width: 100%;
     min-width: 20%;
-    object-fit: cover;
 }
 
 .border {
@@ -259,16 +263,7 @@ section {
 }
 
 /* make it reactive */
-@media only screen and (max-width: 620px) {
-    section {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-    .gallery {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
+@media only screen and (max-width: 860px) {
     .gallery li {
         height:min-content;
         flex-basis: 100%;
@@ -278,6 +273,19 @@ section {
     }
     .gallery li video {
         max-width: 100%;
+    }
+}
+
+/* make it reactive */
+@media only screen and (max-width: 620px) {
+    section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .gallery {
+        padding-left: 0px;
+        padding-right: 0px;
     }
     nav, article {
         width: 100%;

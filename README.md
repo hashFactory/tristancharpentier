@@ -27,7 +27,7 @@ Look at the bottom of this readme to see how to compile this website.
   - [X] only make `export` rmdir if compilation was successful
   - [ ] add `print` command that outputs all the settings it understands
   - [ ] create documentation for all .map files
-  - [ ] figure out solution for growing /assets size
+  - [-] figure out solution for growing /assets size (Update: finish migration to gdrive hosting)
   - [ ] add instructions to readme on how to compile
   - [ ] integrate music page into main page
 
