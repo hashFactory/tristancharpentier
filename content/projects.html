@@ -4,26 +4,220 @@
 
 <div class="project">
     <div class="project-title">
+        <h3 class="basic-link">Lidar & DEM</h3>
+    </div>
+    <p>
+        Messed around with the data that was available on USGS, Lidar Explorer, ESA's Sentinel, and OpenTopography.
+    </p>
+    <details class="border">
+        <summary>
+            Click here for more info
+        </summary>
+        <p>
+            I'm slowly learning how to to use all of the GeoRef'd data that's freely available online.
+            My biggest achievement these past few days has been to be able to apply orthoimagery to point clouds and most recently DEMs too!
+            That was the whole point of BlenderRenderTerrain so I guess that makes that whole project almost obsolete.
+            <br>
+            These subprojects are the product of me learning how to manipulate this type of data.
+            <br>
+            For the most part, these are in chronological order.
+        </p>
+        <details>
+            <summary>
+                Links to data sources
+            </summary>
+            <ul>
+                <li>
+                    <p><a class="basic-link" href="https://earthexplorer.usgs.gov/">USGS's EarthExplorer</a>
+                        - high resolution orthoimagery (up to 10cm resolution). [mainly US]
+                    </p>
+                </li>
+                <li>
+                    <p><a class="basic-link" href="https://prd-tnm.s3.amazonaws.com/LidarExplorer/index.html#/">3DEP LidarExplorer</a>
+                        - point clouds (up to 7pts/m^2) and digital elevation models (1m res). [US only]
+                    </p>
+                </li>
+                <li>
+                    <p><a class="basic-link" href="https://scihub.copernicus.eu/">ESA's Sentinel</a>
+                        - near real time global coverage in 8 different wavelengths (IR to visible to UV). tons of derivative data provided too. [world]
+                    </p>
+                </li>
+                <li>
+                    <p><a class="basic-link" href="https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html">IGN</a>
+                        - french mapping agency. provides high res ortho (up to 10cm), 5m res DEM, vector maps, and much more. [France]
+                    </p>
+                </li>
+                <li>
+                    <p><a class="basic-link" href="https://gportal.jaxa.jp/gpr/">JAXA's GeoPortal</a>
+                        - japanese mapping agency. covers everything from magnetometers to radar to IR to SAR. [mostly Asia-Pacific but world too]
+                    </p>
+                </li>
+                <li>
+                    <p><a class="basic-link" href="https://www.usgs.gov/centers/astrogeology-science-center/science/annex-pds-cartography-imaging-sciences-node?qt-science_center_objects=0#qt-science_center_objects">USGS's Annex of PDS</a>
+                        - USGS's colaboration with NASA for everything related to mapping data of other celestial bodies. [solar system except earth]
+                    </p>
+                </li>
+                <li>
+                    <p><a class="basic-link" href="https://uavsar.jpl.nasa.gov/cgi-bin/data.pl">UAVSAR</a>
+                        - part of NASA. uses airborne scanners to get polarimetric SAR. it's stunning what information they can extrapolate from that data seriously check it the tech is amazing. [select places in the world]
+                    </p>
+                </li>
+            </ul>
+        </details>
+    </details>
+
+    <div>
+        <details class="border">
+            <summary>
+                Click here to see sub-projects
+            </summary>
+            <details class="border" style="margin-left: 5px;">
+                <summary>
+                    fc
+                </summary>
+                <ul class="gallery">
+                    <li class="border" style="flex: 1; min-width: 20vh; max-width: 60vh; max-height: 20vh;padding:5 5 5 5;">
+                        <a class="basic-link" href="storage/assets-large/projects/Lidar/fc/fc.bin">Raw point cloud (fc.bin)</a>
+                        <br>Download CloudCompare and drag and drop this .bin into the window to open (1.1G)
+                    </li>
+                    <li>
+                        <video class="gallery-video" controls>
+                            <source src="storage/assets-large/projects/Lidar/fc/fc_orig.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li>
+                        <video class="gallery-video" controls>
+                            <source src="storage/assets-large/projects/Lidar/fc/segmentation.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li>
+                        <img src="storage/assets-large/projects/Lidar/fc/thumb.png">
+                    </li>
+                    <li>
+                        <img src="storage/assets-large/projects/Lidar/fc/sc1.png">
+                    </li>
+                    <li>
+                        <img src="storage/assets-large/projects/Lidar/fc/sc2.png">
+                    </li>
+                    <li>
+                        <img src="storage/assets-large/projects/Lidar/fc/sc3.png">
+                    </li>
+                    <li>
+                        <img src="storage/assets-large/projects/Lidar/fc/sc4.png">
+                    </li>
+                    <li>
+                        <img src="storage/assets-large/projects/Lidar/fc/sc5.png">
+                    </li>
+                    <li>
+                        <video class="gallery-video" controls>
+                            <source src="storage/assets-large/projects/Lidar/fc/fc_square.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li>
+                        <video class="gallery-video" controls>
+                            <source src="storage/assets-large/projects/Lidar/fc/fc_segmentation.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                </ul>
+            </details>
+            <details class="border" style="margin-left: 5px;">
+                <summary>
+                    sentinel (data gathered from Sentinel 2A and 2B satellites)
+                </summary>
+                <ul class="gallery">
+                    <li>
+                        <img href="storage/assets-large/projects/Lidar/cyprus/cyprus.2021.02.07.png" src="storage/assets-large/projects/Lidar/cyprus/cyprus.2021.02.07_small.png">
+                    </li>
+                    <li>
+                        <a href="storage/assets-large/projects/Lidar/cyprus/cyprus.ir.2021.02.07.png">
+                            <img src="storage/assets-large/projects/Lidar/cyprus/cyprus.ir.2021.02.07_small.png">
+                        </a>
+                    </li>
+                    <li>
+                        <video class="gallery-video" controls>
+                            <source src="storage/assets-large/projects/Lidar/tunis/tunisie.2021.02.09.h264.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                </ul>
+            </details>
+            <details class="border" style="margin-left: 5px;">
+                <summary>
+                    New Mexico (this was while I was first discovering how to apply georef'd orthoimagery to point clouds)
+                </summary>
+                <ul class="gallery">
+                    <li>
+                        <video class="gallery-video" controls>
+                            <source src="storage/assets-large/projects/Lidar/new_mexico/demo.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li>
+                        <video class="gallery-video" controls>
+                            <source src="storage/assets-large/projects/Lidar/new_mexico/nm_demo2.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                </ul>
+            </details>
+            <details class="border" style="margin-left: 5px;">
+                <summary>
+                    San Thomas (click on the video to watch full-res versions)
+                </summary>
+                <ul class="gallery">
+                    <li>
+                        <a target="_blank" href="storage/assets-large/projects/Lidar/san_thomas/frame_000000.png">
+                            <img src="storage/assets-large/projects/Lidar/san_thomas/frame_000000.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="storage/assets-large/projects/Lidar/san_thomas/out2.mp4">
+                            <video class="gallery-video" loop autoplay>
+                                <source src="storage/assets-large/projects/Lidar/san_thomas/out2_small.mp4" type="video/mp4">
+                                    Your browser cannot play this video :(
+                            </video>
+                        </a>
+                    </li>
+                </ul>
+            </details>
+        </details>
+    </div>
+</div>
+
+<div class="project">
+    <div class="project-title">
         <h3><a class="basic-link" href="https://github.com/hashFactory/BlenderRenderTerrain">BlenderRenderTerrain</a></h3>
     </div>
     <p>
-        Randomly came upon this page <a class="basic-link" href="https://viewer.nationalmap.gov/basic/#/">https://viewer.nationalmap.gov/basic/</a>.
-        It's the main page you're supposed to use to access USGS (US Geographical Survey) datasets.
-        Turns out you can download DEM (Digital Elevation Model) tiles which are rectangular images where each pixel's value describes the elevation at that spot.
-        So I downloaded them for my region and started importing them into <a class="basic-link" href="https://www.qgis.org/">QGIS</a> (software used for processing / analyzing / doing <i>anything</i> with geographical data).
-        I first found out about this software when I worked on <a class="basic-link" href="https://github.com/hashFactory/ImThirsty">ImThirsty</a>.
-        <br><br>
-        So then with these tiles I started wondering what I could do with them. The first thing that came to mind was to try to convert these images into a 3D mesh I could import into Blender.
-        Many, many, trials later I finally found a piece of software called <a class="basic-link" href="https://github.com/heremaps/tin-terrain">tin-terrain</a> that lets you do exactly that using your choice between a few different algorithms (terra, zemlya, or a dense packing).
-        The problem was each of these tiles is 10000x10000 pixels (each pixel being 1m<sup>2</sup>). My laptop was not up to the task of converting a hundred million vertices into a mesh.
-        Trying to process the standard 10km x 10km tile would always lead to my laptop running out of memory. So I decided to use some of my free Google Cloud Compute credits to run the same program on a Ubuntu vm.
-        I kept starting tin-terrain but the vm would always run out of memory eventually. In the end I found ~30GB of ram would get the job done.
-        <br><br>
-        Rest will be written later lol (this is a WIP after all).
+        Streamlined the process from digital elevation model to a working Blender project with 3D terrain.
     </p>
+    <details class="border">
+        <summary>
+            Click here for more info
+        </summary>
+        <p>
+            Randomly came upon this page <a class="basic-link" href="https://viewer.nationalmap.gov/basic/#/">https://viewer.nationalmap.gov/basic/</a>.
+            It's the main page you're supposed to use to access USGS (US Geographical Survey) datasets.
+            Turns out you can download DEM (Digital Elevation Model) tiles which are rectangular images where each pixel's value describes the elevation at that spot.
+            So I downloaded them for my region and started importing them into <a class="basic-link" href="https://www.qgis.org/">QGIS</a> (software used for processing / analyzing / doing <i>anything</i> with geographical data).
+            I first found out about this software when I worked on <a class="basic-link" href="https://github.com/hashFactory/ImThirsty">ImThirsty</a>.
+            <br><br>
+            So then with these tiles I started wondering what I could do with them. The first thing that came to mind was to try to convert these images into a 3D mesh I could import into Blender.
+            Many, many, trials later I finally found a piece of software called <a class="basic-link" href="https://github.com/heremaps/tin-terrain">tin-terrain</a> that lets you do exactly that using your choice between a few different algorithms (terra, zemlya, or a dense packing).
+            The problem was each of these tiles is 10000x10000 pixels (each pixel being 1m<sup>2</sup>). My laptop was not up to the task of converting a hundred million vertices into a mesh.
+            Trying to process the standard 10km x 10km tile would always lead to my laptop running out of memory. So I decided to use some of my free Google Cloud Compute credits to run the same program on a Ubuntu vm.
+            I kept starting tin-terrain but the vm would always run out of memory eventually. In the end I found ~30GB of ram would get the job done.
+            <br><br>
+            Rest will be written later lol (this is a WIP after all).
+        </p>
+    </details>
     <div>
-        <details>
-            <summary class="border">
+        <details class="border">
+            <summary>
                 Click here to see gallery
             </summary>
             <ul class="gallery">
@@ -175,7 +369,9 @@
             </summary>
         <ul class="gallery">
             <li>
-                <img src="assets/bg_loop_2.gif">
+                <video class="gallery-video" autoplay controls loop>
+                    <source src="storage/assets-large/projects/jvid/bg_loop.mp4" type="video/mp4">
+                </video>
             </li>
             <li>
                 <img src="assets/house_childhood.jpg">

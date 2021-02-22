@@ -46,6 +46,11 @@ header {
 .project {
     border-bottom: 1px dashed darkgray;
     margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.project details {
+    margin-bottom: 10px;
 }
 
 /* bullet list for dark mode */
@@ -77,38 +82,34 @@ header {
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #f6f2f7;
-    border-style: 1px solid;
     list-style: none;
-    margin-top: 0px;
+    margin-top: 10px;
+    padding: 0px;
 }
 
 .gallery li {
-    height: 40vh;
     flex-grow: 1;
+    flex-basis: 50%;
 }
 
 .gallery li img {
     max-height: 100%;
-    max-width: 400px;
-    min-width: 33%;
+    max-width: 100%;
+    min-width: 20%;
     object-fit: cover;
-    vertical-align: bottom;
 }
 
 .gallery-video {
     max-height: 100%;
-    max-width: 400px;
-    min-width: 33%;
+    max-width: 100%;
+    min-width: 20%;
     object-fit: cover;
-    vertical-align: bottom;
 }
 
 .border {
     color: #f6f2f7;
     border: 1px solid #f6f2f7;
     border-style: 1px solid;
-    font-size: large;
     background-color: #2f1f33;
 }
 
@@ -270,6 +271,7 @@ section {
     }
     .gallery li {
         height:min-content;
+        flex-basis: 100%;
     }
     .gallery li img {
         max-width: 100%;
@@ -348,6 +350,9 @@ section {
         color: white;
     }
     h3 {
+        color: #f6f2f7;
+    }
+    h2 {
         color: #f6f2f7;
     }
     .playlist-page-header {
