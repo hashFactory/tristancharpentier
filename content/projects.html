@@ -2,6 +2,156 @@
     <h2>Here are some of my random personal projects</h2>
 </div>
 
+<! -- Kinect, AR, and ProjectM -->
+<div class="project">
+    <div class="project-title">
+        <h3>Kinect, AR, and ProjectM</h3>
+    </div>
+    <p>
+        
+    </p>
+    <div>
+        <details class="border">
+            <summary>
+                Kinect  <small>(Room scans with Kinect for xbox 360)</small>
+            </summary>
+            <p>
+                Found an old Kinect for the xbox 360 my family used to have. Since I've been into Lidar recently
+                I looked up what all I could do with it. Found a software called Skanect that was made for the purpose
+                of generating meshes from real world scenes using the Kinect's depth sensor and even coloring them using
+                its 480p color camera. So with mixed results and a lot of patience I was able to make scans of my living
+                room and my bedroom.
+            </p>
+            <details class="border">
+                <summary>
+                    The making of
+                </summary>
+                <ul class="gallery">
+                    <li>
+                        <a target="_blank" href="storage/assets-large/projects/Kinect/living/making_of/2021-02-22.22.33.51.png">
+                            <img src="storage/assets-large/projects/Kinect/living/making_of/2021-02-22.22.33.51.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="storage/assets-large/projects/Kinect/living/making_of/2021-02-23.18.37.09.png">
+                            <img src="storage/assets-large/projects/Kinect/living/making_of/2021-02-23.18.37.09.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="storage/assets-large/projects/Kinect/living/making_of/2021-02-23.18.39.34.png">
+                            <img src="storage/assets-large/projects/Kinect/living/making_of/2021-02-23.18.39.34.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="border">
+                            <img src="storage/assets-large/projects/Kinect/living/making_of/color.jpg">
+                            <p>Sample of one of the frames the software used to reconstruct the color map.</p>
+                        </div>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/living/making_of/k1.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                </ul>
+            </details>
+           
+            <details class="border">
+                <summary>Rendered results</summary>
+                <ul class="gallery">
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/living/results/living_first_try.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/living/results/living4_smoooth.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                </ul>
+            </details>
+        </details>
+
+        <div>
+        <details class="border">
+            <summary>
+                Visualizations  <small>(Using ProjectM to generate visuals for whatever audio is playing)</small>
+            </summary>
+            <p>
+                Goes back to this winter. This open source project lets you run old MilkDrop shaders (or any HLSL or GLSL shader) on modern hardware.
+                Ended up modifying it <a class="basic-link" href="https://github.com/hashFactory/projectm/commit/b0fe166051d056f02262a68c07ec8d92c60defc7">here</a> to allow me to capture raw frames instead of having to screen record the window which was expensive in terms
+                of computation, memory, and visual quality. As well as ease of use. So I messed around in it for a while and decided to produce some videos.
+            </p>
+            <details class="border">
+                <summary>
+                    pt. 1
+                </summary>
+                <ul class="gallery">
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/visualizer/movie30.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <p class="border">Which I then turned into</p>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/visualizer/out_lq_sound.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <p>and</p>
+                    </li>
+                    <div class="border">
+                        <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/visualizer/smaller2.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <p class="border">which became</p>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/visualizer/out3_sharp_4.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    </div>
+                    
+                </ul>
+            </details>
+           
+            <details class="border">
+                <summary>Rendered results</summary>
+                <ul class="gallery">
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/visualizer/smaller2.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                    <li style="flex-basis: 100%;">
+                        <video class="gallery-wide" controls playsinline>
+                            <source src="storage/assets-large/projects/Kinect/visualizer/out3_sharp_4.mp4" type="video/mp4">
+                                Your browser cannot play this video :(
+                        </video>
+                    </li>
+                </ul>
+            </details>
+        </details>
+    </div>
+</div>
+
+
 <! -- Lidar, DEM, and SAR -->
 <div class="project">
     <div class="project-title">
@@ -84,13 +234,13 @@
                         <br>Download CloudCompare and drag and drop this .bin into the window to open (1.1G)
                     </li>
                     <li>
-                        <video class="gallery-video" controls>
+                        <video class="gallery-wide" controls playsinline>
                             <source src="storage/assets-large/projects/Lidar/fc/fc_orig.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
                     </li>
                     <li>
-                        <video class="gallery-video" controls>
+                        <video class="gallery-wide" controls playsinline>
                             <source src="storage/assets-large/projects/Lidar/fc/segmentation.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
@@ -121,13 +271,13 @@
                         </a>
                     </li>
                     <li>
-                        <video class="gallery-video" controls>
+                        <video class="gallery-wide" controls playsinline>
                             <source src="storage/assets-large/projects/Lidar/fc/fc_square.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
                     </li>
                     <li>
-                        <video class="gallery-video" controls>
+                        <video class="gallery-wide" controls playsinline>
                             <source src="storage/assets-large/projects/Lidar/fc/fc_segmentation.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
@@ -157,19 +307,19 @@
                         </a>
                     </li>
                     <li>
-                        <video class="gallery-video" controls>
+                        <video class="gallery-wide" controls playsinline>
                             <source src="storage/assets-large/projects/Lidar/tunis/tunisie.2021.02.09.h264.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
                     </li>
                     <li style="flex-basis: 100%;">
-                        <a target="_blank" href="storage/assets-large/projects/lidar/satellite/S2A_MSIL2A_20210210T111211_N0214_R137_T29QKD_20210210T140355_RGB_orig.png" title="Natural color image captured from Sential 2A as it passed over the Eye of the Sahara">
-                            <img src="storage/assets-large/projects/lidar/satellite/eye_of_the_sahara.jpg">
+                        <a target="_blank" href="storage/assets-large/projects/Lidar/satellite/S2A_MSIL2A_20210210T111211_N0214_R137_T29QKD_20210210T140355_RGB_orig.png" title="Natural color image captured from Sential 2A as it passed over the Eye of the Sahara">
+                            <img src="storage/assets-large/projects/Lidar/satellite/eye_of_the_sahara.jpg">
                         </a>
                     </li>
                     <li style="flex-basis: 100%;">
-                        <a target="_blank" href="storage/assets-large/projects/lidar/satellite/mars1.png" title="Digital elevation model of mars">
-                            <img src="storage/assets-large/projects/lidar/satellite/mars1.jpg">
+                        <a target="_blank" href="storage/assets-large/projects/Lidar/satellite/mars1.png" title="Digital elevation model of mars">
+                            <img src="storage/assets-large/projects/Lidar/satellite/mars1.jpg">
                         </a>
                     </li>
                 </ul>
@@ -181,13 +331,13 @@
                 </summary>
                 <ul class="gallery">
                     <li>
-                        <video class="gallery-video" controls>
+                        <video class="gallery-wide" controls playsinline>
                             <source src="storage/assets-large/projects/Lidar/new_mexico/demo.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
                     </li>
                     <li>
-                        <video class="gallery-video" controls>
+                        <video class="gallery-wide" controls playsinline>
                             <source src="storage/assets-large/projects/Lidar/new_mexico/nm_demo2.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
@@ -207,7 +357,7 @@
                     </li>
                     <li>
                         <a target="_blank" href="storage/assets-large/projects/Lidar/san_thomas/out2.mp4">
-                            <video class="gallery-video" loop autoplay>
+                            <video class="gallery-wide" loop autoplay playsinline>
                                 <source src="storage/assets-large/projects/Lidar/san_thomas/out2_small.mp4" type="video/mp4">
                                     Your browser cannot play this video :(
                             </video>
@@ -228,7 +378,7 @@
                 <ul class="gallery">
                     <li style="flex-basis: 100%;">
                         <a target="_blank" href="storage/assets-large/projects/Lidar/sar/pauli.mp4">
-                            <video class="gallery-video" loop autoplay>
+                            <video class="gallery-wide" loop autoplay playsinline>
                                 <source src="storage/assets-large/projects/Lidar/sar/pauli_small.mp4" type="video/mp4">
                                     Your browser cannot play this video :(
                             </video>
@@ -380,13 +530,13 @@
             </summary>
             <ul class="gallery">
                 <li>
-                    <video class="gallery-video" controls>
+                    <video class="gallery-wide" controls playsinline>
                         <source src="storage/assets-large/projects/BlenderRenderTerrain/demo_blender_import_script.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" autoplay loop>
+                    <video class="gallery-wide" autoplay playsinline loop>
                         <source src="storage/assets-large/projects/BlenderRenderTerrain/demo.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
@@ -398,20 +548,20 @@
                     <img src="storage/assets-large/projects/BlenderRenderTerrain/2020-11-03.23.36.18.jpg">
                 </li>
                 <li>
-                    <video class="gallery-video" controls>
+                    <video class="gallery-wide" controls playsinline>
                         <source src="storage/assets-large/projects/BlenderRenderTerrain/2020-10-08.02.34.09.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" controls>
+                    <video class="gallery-wide" controls playsinline>
                         <source src="storage/assets-large/projects/BlenderRenderTerrain/2020-10-08.05.04.27.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
                     <a target="_blank" href="storage/assets-large/projects/BlenderRenderTerrain/gdrive_render_2.mp4">
-                        <video class="gallery-video" autoplay loop>
+                        <video class="gallery-wide" autoplay playsinline loop>
                             <source src="storage/assets-large/projects/BlenderRenderTerrain/gdrive_render_2_small.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
@@ -419,7 +569,7 @@
                 </li>
                 <li>
                     <a target="_blank" href="storage/assets-large/projects/BlenderRenderTerrain/output_all_4k.mp4">
-                        <video class="gallery-video" autoplay loop>
+                        <video class="gallery-wide" autoplay playsinline loop>
                             <source src="storage/assets-large/projects/BlenderRenderTerrain/output_all_4k_small.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
@@ -427,7 +577,7 @@
                 </li>
                 <li>
                     <a target="_blank" href="storage/assets-large/projects/BlenderRenderTerrain/output_mega_la_2_60_apple.mp4">
-                        <video class="gallery-video" autoplay loop>
+                        <video class="gallery-wide" autoplay playsinline loop>
                             <source src="storage/assets-large/projects/BlenderRenderTerrain/output_mega_la_2_60_apple_small.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
@@ -478,7 +628,7 @@
             </summary>
             <ul class="gallery" id="gallery-small">
                 <li>
-                    <video class="gallery-video" controls>
+                    <video class="gallery-wide" controls playsinline>
                         <source src="storage/assets-large/projects/ImThirsty/imthirsty2.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
@@ -507,67 +657,67 @@
             </summary>
             <ul class="gallery" id="gallery-small">
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-1189-1238.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-1425-1490.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-1630-1766.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-1728-1842.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-1936-1999.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-1990-2090.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-2116-2201.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-2201-2310.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-2310-2416.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-2416-2488.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
                 </li>
                 <li>
-                    <video class="gallery-video" loop autoplay>
+                    <video class="gallery-wide" loop autoplay playsinline>
                         <source src="storage/assets-large/projects/Cohl/out-2488-2566.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
@@ -621,7 +771,7 @@
             </summary>
             <ul class="gallery" id="gallery-small">
                 <li>
-                    <video class="gallery-video" controls>
+                    <video class="gallery-wide" controls playsinline>
                         <source src="storage/assets-large/projects/FlowSolver/flow_demo.mp4" type="video/mp4">
                             Your browser cannot play this video :(
                     </video>
@@ -644,7 +794,7 @@
             </summary>
         <ul class="gallery" id="gallery-small">
             <li>
-                <video class="gallery-video" autoplay controls loop>
+                <video class="gallery-wide" autoplay playsinline controls loop>
                     <source src="storage/assets-large/projects/jvid/bg_loop.mp4" type="video/mp4">
                 </video>
             </li>
