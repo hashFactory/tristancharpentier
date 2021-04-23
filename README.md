@@ -28,8 +28,10 @@ Look at the bottom of this readme to see how to compile this website.
   - [ ] add `print` command that outputs all the settings it understands
   - [ ] create documentation for all .map files
   - [-] figure out solution for growing /assets size (Update: finish migration to gdrive hosting)
+    - [ ] fix lack of gdrive hosting
   - [ ] add instructions to readme on how to compile
   - [ ] integrate music page into main page
+  - [ ] add testing
 
 (this section can be seen in action [here](https://tristancharpentier.com/test/exp6))
 * Playlist pages
@@ -43,17 +45,30 @@ Look at the bottom of this readme to see how to compile this website.
     - [X] output all to some tbd js database
   - [ ] integrate to preprocessor
 
+(this section can be seen in action [here](https://tristancharpentier.com/test/projects.html))
+* Projects pages
+  - [ ] look into separating projects into separate pages
+  - [ ] automatically generate low res image previews
+  - [ ] setup automated tests for assets
+  - [ ] create .map project directive 
+  - [ ] add music player project
+  - [ ] add lidar, kinect, and projectM
+  - [ ] add jvid page
+  - [ ] add NST and GPT projects
+
 * Website
   - [X] mobile responsiveness
   - [X] get rid of all hardcoded style from html
   - [X] completely reorganize main.css
   - [ ] segment css into separate files
-  - [ ] create pretty spotify playlists page
+  - [X] create pretty spotify playlists page
+    - [ ] make playlist page update automatically
   - [ ] add personal links to bottom of home page
   - [X] (plz one day) dark mode
   - [X] make website reach bottom of the page
-  - [ ] add image onClick to make it bigger
+  - [-] add image onClick to make it bigger
   - [X] create projects page
+  - [ ] create webradio page
 
 ### Preprocessor
 ```
