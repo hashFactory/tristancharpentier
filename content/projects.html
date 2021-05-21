@@ -2,13 +2,16 @@
     <h2>Here are some of my random personal projects</h2>
 </div>
 
+<! -- Kinect + Blender lvl 2 -->
+
+
 <! -- Kinect, AR, and ProjectM -->
 <div class="project">
     <div class="project-title">
-        <h3>Kinect, AR, and ProjectM</h3>
+        <h3 class="basic-link">Kinect, AR, and ProjectM</h3>
     </div>
     <p>
-        
+        Preliminary results from a couple of 3D tools and toys.
     </p>
     <div>
         <details class="border">
@@ -77,71 +80,110 @@
         </details>
 
         <div>
+            <details class="border">
+                <summary>
+                    Visualizations  <small>(Using ProjectM to generate visuals for whatever audio is playing)</small>
+                </summary>
+                <p>
+                    Goes back to this winter. This open source project lets you run old MilkDrop shaders (or any HLSL or GLSL shader) on modern hardware.
+                    Ended up modifying it <a class="basic-link" href="https://github.com/hashFactory/projectm/commit/b0fe166051d056f02262a68c07ec8d92c60defc7">here</a> to allow me to capture raw frames instead of having to screen record the window which was expensive in terms
+                    of computation, memory, and visual quality. As well as ease of use. So I messed around in it for a while and decided to produce some videos.
+                </p>
+                <details class="border">
+                    <summary>
+                        pt. 1
+                    </summary>
+                    <ul class="gallery">
+                        <li style="flex-basis: 100%;">
+                            <video class="gallery-wide" controls playsinline>
+                                <source src="storage/assets-large/projects/Kinect/visualizer/movie30.mp4" type="video/mp4">
+                                    Your browser cannot play this video :(
+                            </video>
+                        </li>
+                        <li style="flex-basis: 100%;">
+                            <p class="border">Which I then turned into</p>
+                        </li>
+                        <li style="flex-basis: 100%;">
+                            <video class="gallery-wide" controls playsinline>
+                                <source src="storage/assets-large/projects/Kinect/visualizer/out_lq_sound.mp4" type="video/mp4">
+                                    Your browser cannot play this video :(
+                            </video>
+                        </li>
+                        <li style="flex-basis: 100%;">
+                            <p>and</p>
+                        </li>
+                        <div class="border">
+                            <li style="flex-basis: 100%;">
+                            <video class="gallery-wide" controls playsinline>
+                                <source src="storage/assets-large/projects/Kinect/visualizer/smaller2.mp4" type="video/mp4">
+                                    Your browser cannot play this video :(
+                            </video>
+                        </li>
+                        <li style="flex-basis: 100%;">
+                            <p class="border">which became</p>
+                        </li>
+                        <li style="flex-basis: 100%;">
+                            <video class="gallery-wide" controls playsinline>
+                                <source src="storage/assets-large/projects/Kinect/visualizer/out3_sharp_4.mp4" type="video/mp4">
+                                    Your browser cannot play this video :(
+                            </video>
+                        </li>
+                        </div>
+                        
+                    </ul>
+                </details>
+            
+                <details class="border">
+                    <summary>Rendered results</summary>
+                    <ul class="gallery">
+                        <li style="flex-basis: 100%;">
+                            <video class="gallery-wide" controls playsinline>
+                                <source src="storage/assets-large/projects/Kinect/visualizer/smaller2.mp4" type="video/mp4">
+                                    Your browser cannot play this video :(
+                            </video>
+                        </li>
+                        <li style="flex-basis: 100%;">
+                            <video class="gallery-wide" controls playsinline>
+                                <source src="storage/assets-large/projects/Kinect/visualizer/out3_sharp_4.mp4" type="video/mp4">
+                                    Your browser cannot play this video :(
+                            </video>
+                        </li>
+                    </ul>
+                </details>
+            </details>
+        </div>
+
         <details class="border">
             <summary>
-                Visualizations  <small>(Using ProjectM to generate visuals for whatever audio is playing)</small>
+                AR  <small>(Producing AR visualizations)</small>
             </summary>
             <p>
-                Goes back to this winter. This open source project lets you run old MilkDrop shaders (or any HLSL or GLSL shader) on modern hardware.
-                Ended up modifying it <a class="basic-link" href="https://github.com/hashFactory/projectm/commit/b0fe166051d056f02262a68c07ec8d92c60defc7">here</a> to allow me to capture raw frames instead of having to screen record the window which was expensive in terms
-                of computation, memory, and visual quality. As well as ease of use. So I messed around in it for a while and decided to produce some videos.
+                Experimented with Blender's motion tracking to fit the visualizations onto a video taken with my phone.
             </p>
             <details class="border">
                 <summary>
-                    pt. 1
+                    The making of
                 </summary>
                 <ul class="gallery">
-                    <li style="flex-basis: 100%;">
-                        <video class="gallery-wide" controls playsinline>
-                            <source src="storage/assets-large/projects/Kinect/visualizer/movie30.mp4" type="video/mp4">
-                                Your browser cannot play this video :(
-                        </video>
+                    <li>
+                        <a target="_blank" href="storage/assets-large/projects/Kinect/aug/making_of/2021-02-24.05.17.51.png">
+                            <img src="storage/assets-large/projects/Kinect/aug/making_of/2021-02-24.05.17.51-small.png">
+                        </a>
                     </li>
-                    <li style="flex-basis: 100%;">
-                        <p class="border">Which I then turned into</p>
+                    <li>
+                        <a target="_blank" href="storage/assets-large/projects/Kinect/aug/making_of/2021-02-25.18.30.00.png">
+                            <img src="storage/assets-large/projects/Kinect/aug/making_of/2021-02-25.18.30.00-small.png">
+                        </a>
                     </li>
-                    <li style="flex-basis: 100%;">
-                        <video class="gallery-wide" controls playsinline>
-                            <source src="storage/assets-large/projects/Kinect/visualizer/out_lq_sound.mp4" type="video/mp4">
-                                Your browser cannot play this video :(
-                        </video>
-                    </li>
-                    <li style="flex-basis: 100%;">
-                        <p>and</p>
-                    </li>
-                    <div class="border">
-                        <li style="flex-basis: 100%;">
-                        <video class="gallery-wide" controls playsinline>
-                            <source src="storage/assets-large/projects/Kinect/visualizer/smaller2.mp4" type="video/mp4">
-                                Your browser cannot play this video :(
-                        </video>
-                    </li>
-                    <li style="flex-basis: 100%;">
-                        <p class="border">which became</p>
-                    </li>
-                    <li style="flex-basis: 100%;">
-                        <video class="gallery-wide" controls playsinline>
-                            <source src="storage/assets-large/projects/Kinect/visualizer/out3_sharp_4.mp4" type="video/mp4">
-                                Your browser cannot play this video :(
-                        </video>
-                    </li>
-                    </div>
-                    
                 </ul>
             </details>
            
             <details class="border">
-                <summary>Rendered results</summary>
+                <summary>Rendered result</summary>
                 <ul class="gallery">
                     <li style="flex-basis: 100%;">
                         <video class="gallery-wide" controls playsinline>
-                            <source src="storage/assets-large/projects/Kinect/visualizer/smaller2.mp4" type="video/mp4">
-                                Your browser cannot play this video :(
-                        </video>
-                    </li>
-                    <li style="flex-basis: 100%;">
-                        <video class="gallery-wide" controls playsinline>
-                            <source src="storage/assets-large/projects/Kinect/visualizer/out3_sharp_4.mp4" type="video/mp4">
+                            <source src="storage/assets-large/projects/Kinect/aug/results/aug_h264.mp4" type="video/mp4">
                                 Your browser cannot play this video :(
                         </video>
                     </li>
