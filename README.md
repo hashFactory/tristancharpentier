@@ -68,6 +68,7 @@ Look at the bottom of this readme to see how to compile this website.
   - [X] make website reach bottom of the page
   - [-] add image onClick to make it bigger
   - [X] create projects page
+    - [ ] make each project page link to higher res version
   - [ ] create webradio page
 
 ### Preprocessor
