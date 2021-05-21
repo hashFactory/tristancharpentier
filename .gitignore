@@ -3,3 +3,6 @@ site.code-workspace
 .refresh.sh.swp
 out/
 exp/magna_opera/
+
+assets/projects/**
+assets/bg_loop_2.gif
